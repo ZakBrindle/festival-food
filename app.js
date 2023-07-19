@@ -20,18 +20,21 @@ const foodOptions = [
     price: 20,
     image: "flame-grilled-pizza.jpg",
     extras: [" Margarita", " Chicken", " Sweetcorn", " All the veggies", " Meat Feast"],
+    buybuttonid: "buy_btn_1NVgBYEjWpAK8TuWfE0fxXAp",
   },
   {
     name: "Cheeseburger and Chips",
     price: 20,
     image: "cheeseburger-and-chips.jpg",
     extras: [" Onions", " No Onions", " Red Sauce", " Brown Sauce", " BBQ Sauce"],
+    buybuttonid: "buy_btn_1NVgECEjWpAK8TuW3YiLzIMt",
   },
   {
     name: "Halloumi and Fries",
     price: 20,
     image: "halloumi-and-fries.jpg",
     extras: [],
+    buybuttonid: "buy_btn_1NVgG9EjWpAK8TuWr3Bb89Qs",
   },
   {
     name: "Mac & Cheese",
@@ -50,18 +53,21 @@ const foodOptions = [
     price: 8,
     image: "tea.jpg",
     extras: [" Milk", " No Milk", " Sugar", " Brown Suger", " Caramel", " Vanilla", " Hazelnut" ],
+    buybuttonid: "buy_btn_1NVg3kEjWpAK8TuW9H8SInRY",
   },
   {
     name: "Flat White",
     price: 8,
     image: "tea.jpg",
     extras: [" Milk", " No Milk", " Sugar", " Brown Suger"],
+    buybuttonid: "buy_btn_1NVg3kEjWpAK8TuW9H8SInRY",
   },
   {
     name: "Cup of Tea",
     price: 8,
     image: "tea.jpg",
     extras: [" Milk", " No Milk", " Sugar", " Brown Suger"],
+    buybuttonid: "buy_btn_1NVg3kEjWpAK8TuW9H8SInRY",
   },
 ];
 
