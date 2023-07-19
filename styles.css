@@ -39,14 +39,18 @@ h1 {
 #notification {
   margin-top: 90px; /* 3 times larger margin-top */
   text-align: center;
+
 }
 
 #app-image {
-  max-width: 315%; /* 3 times larger max-width */
+  max-width: 290%; /* 3 times larger max-width */
   border-radius: 30px; /* 3 times larger border radius */
   margin-top: -60px; /* 3 times larger margin-top */
   margin-left: -30px; /* 3 times larger margin-left */
+  display: block; /* Add this line to make it a block-level element */
+  margin: 0 auto; /* Add this line to center horizontally */
 }
+
 
 form {
   display: flex;
@@ -175,6 +179,23 @@ input[type="number"] {
   color: #333;
 }
 
+.main-title {   
+  text-align: center;
+  font-size: 48px; /* 3 times larger font size */
+  color: #333;
+}
+
+.empty-basket-element {   
+  text-align: center;
+  font-size: 48px; /* 3 times larger font size */
+  color: #333;
+}
+
+.main-text {   
+  text-align: center;
+  font-size: 32px; /* 3 times larger font size */
+}
+
 .extra-text {
   font-size: 42px; /* 3 times larger font size */
 }
@@ -284,5 +305,5 @@ input[type="number"] {
 }
 
 #bh-image {
-  width: 210px; /* 3 times larger width */
+  width: 50%; /* 3 times larger width */
 }
