@@ -72,13 +72,7 @@ const foodOptions = [
     buybuttonid: "buy_btn_1NVgREEjWpAK8TuWaki58q1g",
   },
 
-  {
-    name: "Test",
-    price: 0.30,
-    image: "tea.jpg",
-    extras: [],
-    buybuttonid: "buy_btn_1NVgraEjWpAK8TuWgymdnKlF",
-  },
+  
 
 ];
 
