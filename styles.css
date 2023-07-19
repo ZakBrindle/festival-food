@@ -5,14 +5,7 @@ body {
   background-color: #f9f9f9;
 }
 
-#app-container {
-  border: 3px solid #eeeeee; /* 3 times thicker border */
-  border-radius: 30px; /* 3 times larger border radius */
-  padding: 60px 30px 30px; /* 3 times larger padding */
-  max-width: 1200px; /* 3 times larger maximum width */
-  margin: 0 auto;
-  margin-top: 150px; /* 3 times larger margin-top */
-}
+
 
 header {
   background-color: #f1f1f1;
