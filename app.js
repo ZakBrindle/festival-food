@@ -6,19 +6,19 @@ const foodOptions = [
     name: "Mexican Burrito",
     price: 20,
     image: "mexican-burrito.jpg",
-    extras: ["Jalapenos", "No Jalapenos"],
+    extras: [" Jalapenos", " No Jalapenos"],
   },
   {
     name: "Flame Grilled Pizza",
     price: 20,
     image: "flame-grilled-pizza.jpg",
-    extras: ["Margarita", "Chicken", "Sweetcorn", "All the veggies", "Meat Feast"],
+    extras: [" Margarita", " Chicken", " Sweetcorn", " All the veggies", " Meat Feast"],
   },
   {
     name: "Cheeseburger and Chips",
     price: 20,
     image: "cheeseburger-and-chips.jpg",
-    extras: ["Onions", "No Onions", "Red Sauce", "Brown Sauce", "BBQ Sauce"],
+    extras: [" Onions", " No Onions", " Red Sauce", " Brown Sauce", " BBQ Sauce"],
   },
   {
     name: "Halloumi and Fries",
@@ -42,19 +42,19 @@ const foodOptions = [
     name: "Latte",
     price: 8,
     image: "tea.jpg",
-    extras: ["Milk", "No Milk", "Sugar", "Brown Suger", "Caramel", "Vanilla", "Hazelnut" ],
+    extras: [" Milk", " No Milk", " Sugar", " Brown Suger", " Caramel", " Vanilla", " Hazelnut" ],
   },
   {
     name: "Flat White",
     price: 8,
     image: "tea.jpg",
-    extras: ["Milk", "No Milk", "Sugar", "Brown Suger"],
+    extras: [" Milk", " No Milk", " Sugar", " Brown Suger"],
   },
   {
     name: "Cup of Tea",
     price: 8,
     image: "tea.jpg",
-    extras: ["Milk", "No Milk", "Sugar", "Brown Suger"],
+    extras: [" Milk", " No Milk", " Sugar", " Brown Suger"],
   },
 ];
 
