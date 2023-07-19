@@ -357,6 +357,7 @@ orderForm.addEventListener("submit", async (event) => {
   const totalPriceText = totalPriceElement.textContent;
   const totalPriceValue = parseFloat(totalPriceText.replace("Total: £", "")) * 100;
  
+  console.log(stripekeyvalue);
   
   try {
     const stripe = Stripe('pk_live_51NVd2MEjWpAK8TuWU2ViGWscfzmVYt7KvTy2UoRWYR6KwJapFdGIwp3gzfZVnr8LPyqYhrOuoN3IVVof2J2NAqMW00GYLxjotP');
