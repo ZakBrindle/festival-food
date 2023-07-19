@@ -154,7 +154,7 @@ function updateBasketDisplay() {
     const removeIcon = document.createElement("span");
     removeIcon.innerHTML = "&#128465;";
     removeIcon.classList.add("remove-icon");
-    removeIcon.style.fontSize = "30px";
+    removeIcon.style.fontSize = "50px";
     removeIcon.addEventListener("click", () => {
       removeItemFromBasket(getFoodItemId(foodItem) + "-" + extras.join("-"));
     });

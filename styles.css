@@ -226,6 +226,7 @@ input[type="number"] {
   display: flex;
   align-items: center;
   margin-top: 30px; /* 3 times larger margin-top */
+  font-size: 32px; /* 3 times larger font size */
 }
 
 .basket-item-name {
@@ -236,6 +237,7 @@ input[type="number"] {
 .remove-icon {
   margin-left: 15px; /* 3 times larger margin-left */
   cursor: pointer;
+  
 }
 
 .extras-list {
