@@ -24,7 +24,7 @@ const foodOptions = [
   },
   {
     name: "Cheeseburger and Chips",
-    price: 20,
+    price: 18,
     image: "cheeseburger-and-chips.jpg",
     extras: [],
     buybuttonid: "buy_btn_1NVgECEjWpAK8TuW3YiLzIMt",
