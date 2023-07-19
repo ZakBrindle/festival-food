@@ -49,6 +49,7 @@ h1 {
   margin-left: -30px; /* 3 times larger margin-left */
   display: block; /* Add this line to make it a block-level element */
   margin: 0 auto; /* Add this line to center horizontally */
+  margin-left: 20px;
 }
 
 
