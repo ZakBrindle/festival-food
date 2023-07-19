@@ -1,5 +1,10 @@
 
 
+
+
+
+const publishable_key = "pk_live_51NVd2MEjWpAK8TuWU2ViGWscfzmVYt7KvTy2UoRWYR6KwJapFdGIwp3gzfZVnr8LPyqYhrOuoN3IVVof2J2NAqMW00GYLxjotP";
+
 // Sample data for food items and delivery addresses
 const foodOptions = [
   {
@@ -7,6 +12,8 @@ const foodOptions = [
     price: 20,
     image: "mexican-burrito.jpg",
     extras: [" Jalapenos", " No Jalapenos"],
+    buybuttonid: "buy_btn_1NVfgmEjWpAK8TuWIK5DVM0v",
+
   },
   {
     name: "Flame Grilled Pizza",
@@ -197,6 +204,18 @@ function getSelectedExtras(food) {
 // Call the updateBasketDisplay function initially to populate the basket display
 updateBasketDisplay();
 
+// The function to create the Stripe Buy button
+function createStripeBuyButton(food) {
+  const buyButtonTemplate = document.getElementById("stripe-buy-button-template");
+  const buyButton = buyButtonTemplate.content.cloneNode(true).querySelector("stripe-buy-button");
+
+  // Set the unique buy button ID and publishable key
+  buyButton.setAttribute("buy-button-id", food.buybuttonid);
+  buyButton.setAttribute("publishable-key", publishable_key); // Use the common publishable key
+
+  return buyButton;
+}
+
 function createFoodItem(food) {
   const foodItemWrapper = document.createElement("div");
   foodItemWrapper.classList.add("food-item-wrapper");
@@ -232,23 +251,34 @@ function createFoodItem(food) {
     extrasContainer.appendChild(label);
   });
 
-  const addToBasketButton = document.createElement("button");
-  addToBasketButton.textContent = "Add to Basket";
-  addToBasketButton.classList.add("add-to-basket-button");
-
-  const addedMessage = document.createElement("span");
-  addedMessage.textContent = "Added to basket 🛒";
-  addedMessage.classList.add("added-message");
-  foodItem.appendChild(addedMessage); // Add the "Added to basket" message initially (hidden by default)
-
-  addToBasketButton.addEventListener("click", () => {
-    addToBasket(food, 1, getFoodItemId(food), foodItem, addedMessage); // Pass the addedMessage element to the addToBasket function
-  });
-
   foodItem.appendChild(foodName);
   foodItem.appendChild(price);
   foodItem.appendChild(extrasContainer);
-  foodItem.appendChild(addToBasketButton);
+  
+
+  // Create the Stripe Buy button if buybuttonid exists
+  if (food.buybuttonid) {
+    const stripeBuyButton = createStripeBuyButton(food);
+    foodItem.appendChild(stripeBuyButton);
+  } else {
+    // If buybuttonid doesn't exist, create the "Add to Basket" button
+    const addToBasketButton = document.createElement("button");
+    addToBasketButton.textContent = "Add to Basket";
+    addToBasketButton.classList.add("add-to-basket-button");
+
+    const addedMessage = document.createElement("span");
+    addedMessage.textContent = "Added to basket 🛒";
+    addedMessage.classList.add("added-message");
+    foodItem.appendChild(addedMessage); // Add the "Added to basket" message initially (hidden by default)
+
+    addToBasketButton.addEventListener("click", () => {
+      addToBasket(food, 1, getFoodItemId(food), foodItem, addedMessage); // Pass the addedMessage element to the addToBasket function
+    });
+
+    foodItem.appendChild(addToBasketButton);
+  }
+
+  
 
   foodItemWrapper.appendChild(foodImage);
   foodItemWrapper.appendChild(foodItem);
