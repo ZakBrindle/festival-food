@@ -1,5 +1,5 @@
 
-console.log("API KEY FROM VERCEL: " + stripekeyvalue);
+console.log("API KEY FROM VERCEL: " + process.env.stripekeyvalue);
 
 // Sample data for food items and delivery addresses
 const foodOptions = [
