@@ -1,0 +1,25 @@
+# Ignore compiled object files
+*.o
+*.ko
+key.js
+
+# Ignore executable files
+*.exe
+*.out
+
+# Ignore specific directories
+/node_modules/
+/dist/
+/assets/ 
+
+# Ignore log files
+*.log
+
+# Ignore operating system files
+.DS_Store
+Thumbs.db
+
+# Ignore IDE and editor files
+.idea/
+.vscode/
+*.swp

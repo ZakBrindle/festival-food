@@ -1,0 +1,297 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9;
+}
+
+#app-container {
+  border: 1px solid #eeeeee;
+  border-radius: 10px;
+  padding: 20px 10px 10px;
+  max-width: 400px;
+  margin: 0 auto;
+  margin-top: 50px;
+}
+
+header {
+  background-color: #f1f1f1;
+  padding: 20px;
+  text-align: center;
+  border-radius: 10px;
+}
+
+h1 {
+  margin: 0;
+  font-size: 24px;
+}
+
+#menu {
+  margin-top: 30px;
+  text-align: center;
+}
+
+#order-form {
+  margin-top: 30px;
+  text-align: center;
+}
+
+#notification {
+  margin-top: 30px;
+  text-align: center;
+}
+
+#app-image {
+  max-width: 105%;
+  border-radius: 10px;
+  margin-top: -20px;
+  margin-left: -10px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+label {
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+button {
+  margin-top: 20px;
+  background-color: #83a342;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #9fc34d;
+}
+
+select,
+input[type="text"],
+input[type="number"] {
+  padding: 8px;
+  font-size: 14px;
+}
+
+#status {
+  font-weight: bold;
+  color: #c0392b;
+}
+
+.food-item-wrapper {
+  margin: 25px;
+  
+  border-radius: 10px;
+  background-color: #f1f1f1;
+  padding: 10px;
+  position: relative; /* Add this line */
+}
+
+.food-item {  
+  display: flex;
+  flex-direction: column; /* Updated to column */
+  align-items: center; /* Updated to center */
+  margin-bottom: 10px;
+  text-align: center; /* Added to center align text */
+}
+
+.food-name {
+  font-weight: bold; /* Added to make the menu item name bold */
+  font-family: "Century Gothic", Arial, sans-serif; /* Added to apply Century Gothic font */
+}
+
+.food-image {
+  max-width: 100px;
+  height: auto;
+  border-radius: 10px;
+}
+
+.quantity-buttons {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 10px; /* Updated to add margin-top */
+  justify-content: center; /* Added to center align buttons */
+}
+
+.quantity-buttons button {
+  border: none;
+  background-color: transparent;
+  font-size: 16px;
+  cursor: pointer;
+  color: black;
+}
+
+.quantity-input {
+  width: 30px;
+  text-align: center;
+  font-size: 16px;
+}
+
+.add-to-basket-button {
+  margin-bottom: 0;
+}
+
+#item-popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 40px;
+  display: none;
+  z-index: 999;
+  max-width: 400px;
+  width: 80%;
+}
+
+#item-popup-image {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.price {
+  font-size: 18px;
+  color: darkgreen;
+}
+
+.extra-label {
+  display: block;
+  margin-bottom: 5px;
+  text-align: left;
+  font-size: 14px;
+  color: #333;
+}
+
+
+.extra-text {
+  font-size: 14px;
+}
+
+
+#basket-section {
+  margin-top: 20px;
+}
+
+#basket-section h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+#basket-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.basket-item {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.basket-item-name {
+  margin-left: 10px;
+  text-align: left;
+}
+
+.remove-icon {
+  margin-left: 5px;
+  cursor: pointer;
+  
+}
+
+.extras-list {
+  font-size: 12px;
+  margin-top: 5px;
+  margin-left: 10px;
+}
+
+  .basket-item-wrapper {
+    display: flex;
+    align-items: baseline;
+    
+  }
+  
+  .remove-icon-container {
+    margin-left: 5px;
+    margin-top: 2px; /* Adjust the margin-top value as needed */
+  }
+  
+  .total-price {
+    margin-top: 25px; /* Adjust the margin-top value as needed */
+    font-size: 28px; /* Adjust the font size value as needed */
+  }
+  
+
+
+/* Style for the floating button */
+#floating-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 999;
+}
+
+#basket-count {
+  position: absolute;
+  top: 11px;
+  right: -5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  background-color: rgb(202, 0, 0);
+  color: white;
+  font-size: 12px;
+  border-radius: 50%;
+}
+
+#scroll-to-basket {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  background-color: #9fc34d;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+#scroll-to-basket:hover {
+  opacity: 0.8;
+}
+
+#basket-icon {
+  width: 40px;
+  height: 40px;
+  filter: invert(1);
+}
+
+
+
+
+.added-message {
+  margin-top: 50px;
+  margin-bottom: -100px;
+  display: none;
+  font-size: 25px;
+}
+
+#bh-image {
+  width: 70%;
+}

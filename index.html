@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Festival Food</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <script src="https://js.stripe.com/v3/"></script>
+</head>
+<body>
+    
+  <div id="app-container">
+    <img src="./assets/Festival-food-bg.png" alt="Festival Food" id="app-image">
+        
+    <div id="notification">
+        <h2>Delivery Status</h2>
+        <p id="status-text">Delivery is currently <span id="status">Offline</span></p>
+        <p id="disclaimer">Average delivery time: 30mins</p>
+        <br>
+        
+        <img src="./assets/bh.png" alt="Beatherder" id="bh-image">
+      </div>
+
+     
+    
+
+    <div id="menu">
+      <h2>Menu</h2>
+      <div id="food-list-container">
+        <!-- Food items will be dynamically added here -->
+      </div>
+    </div>
+    
+    <div id="order-form">
+      <h2>Order Details</h2>
+      <form id="order">
+        <label for="address-type">Delivery Address:</label><br>
+        <div id="address-options">
+          <input type="radio" id="yurt-option" name="address-type" value="yurt" checked>
+          <label for="yurt-option">Snooty Glamping</label>
+          <input type="radio" id="flag-option" name="address-type" value="flag">
+          <label for="flag-option">Playing Cards</label>
+        </div><br>
+      
+        <select id="delivery-address" name="delivery-address">
+          <!-- Delivery address options will be dynamically added here -->
+        </select>
+
+        <div id="basket-section">
+          <h2>Your Basket</h2>
+          <p class="empty-basket-element">Empty</p>
+          <ul id="basket-list">
+            <!-- Basket items will be dynamically added here -->
+          </ul>
+    
+          <br><br>
+        </div>
+      
+    
+        <form action="/create-checkout-session" method="POST">
+        
+          <button id="checkout-button" type="submit">Place Order</button>
+        </form>
+
+        <br><br>
+      </form>
+    </div>
+
+   
+
+    
+  </div>
+
+
+  <!-- Add the floating button at the bottom right of the page -->
+  <div id="floating-button">
+    <button id="scroll-to-basket" title="View Basket">
+      <img src="basket-icon.png" alt="Basket" id="basket-icon">
+      <span id="basket-count">0</span>
+    </button>
+  </div>
+
+
+
+  <script src="app.js"></script>
+</body>
+</html>
