@@ -361,6 +361,7 @@ orderForm.addEventListener("submit", async (event) => {
  
   
   try {
+    console.log("Making STRIPE request in app.js...");
     const stripe = Stripe('pk_live_51NVd2MEjWpAK8TuWU2ViGWscfzmVYt7KvTy2UoRWYR6KwJapFdGIwp3gzfZVnr8LPyqYhrOuoN3IVVof2J2NAqMW00GYLxjotP');
     const response = await fetch('/api/create-payment-intent', {
       method: 'POST',
