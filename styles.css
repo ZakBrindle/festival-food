@@ -6,67 +6,67 @@ body {
 }
 
 #app-container {
-  border: 1px solid #eeeeee;
-  border-radius: 10px;
-  padding: 20px 10px 10px;
-  max-width: 400px;
+  border: 3px solid #eeeeee; /* 3 times thicker border */
+  border-radius: 30px; /* 3 times larger border radius */
+  padding: 60px 30px 30px; /* 3 times larger padding */
+  max-width: 1200px; /* 3 times larger maximum width */
   margin: 0 auto;
-  margin-top: 50px;
+  margin-top: 150px; /* 3 times larger margin-top */
 }
 
 header {
   background-color: #f1f1f1;
-  padding: 20px;
+  padding: 60px; /* 3 times larger padding */
   text-align: center;
-  border-radius: 10px;
+  border-radius: 30px; /* 3 times larger border radius */
 }
 
 h1 {
   margin: 0;
-  font-size: 24px;
+  font-size: 72px; /* 3 times larger font size */
 }
 
 #menu {
-  margin-top: 30px;
+  margin-top: 90px; /* 3 times larger margin-top */
   text-align: center;
 }
 
 #order-form {
-  margin-top: 30px;
+  margin-top: 90px; /* 3 times larger margin-top */
   text-align: center;
 }
 
 #notification {
-  margin-top: 30px;
+  margin-top: 90px; /* 3 times larger margin-top */
   text-align: center;
 }
 
 #app-image {
-  max-width: 105%;
-  border-radius: 10px;
-  margin-top: -20px;
-  margin-left: -10px;
+  max-width: 315%; /* 3 times larger max-width */
+  border-radius: 30px; /* 3 times larger border radius */
+  margin-top: -60px; /* 3 times larger margin-top */
+  margin-left: -30px; /* 3 times larger margin-left */
 }
 
 form {
   display: flex;
   flex-direction: column;
-  max-width: 300px;
+  max-width: 900px; /* 3 times larger max-width */
   margin: 0 auto;
 }
 
 label {
-  margin-top: 10px;
+  margin-top: 30px; /* 3 times larger margin-top */
   font-weight: bold;
 }
 
 button {
-  margin-top: 20px;
+  margin-top: 60px; /* 3 times larger margin-top */
   background-color: #83a342;
   color: white;
   border: none;
-  padding: 10px 20px;
-  font-size: 16px;
+  padding: 30px 60px; /* 3 times larger padding */
+  font-size: 48px; /* 3 times larger font size */
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
@@ -78,8 +78,8 @@ button:hover {
 select,
 input[type="text"],
 input[type="number"] {
-  padding: 8px;
-  font-size: 14px;
+  padding: 24px; /* 3 times larger padding */
+  font-size: 42px; /* 3 times larger font size */
 }
 
 #status {
@@ -88,53 +88,53 @@ input[type="number"] {
 }
 
 .food-item-wrapper {
-  margin: 25px;
-  
-  border-radius: 10px;
+  margin: 75px; /* 3 times larger margin */
+  border-radius: 30px; /* 3 times larger border radius */
   background-color: #f1f1f1;
-  padding: 10px;
-  position: relative; /* Add this line */
+  padding: 30px; /* 3 times larger padding */
+  position: relative;
 }
 
 .food-item {  
   display: flex;
-  flex-direction: column; /* Updated to column */
-  align-items: center; /* Updated to center */
-  margin-bottom: 10px;
-  text-align: center; /* Added to center align text */
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 30px; /* 3 times larger margin-bottom */
+  text-align: center;
 }
 
 .food-name {
-  font-weight: bold; /* Added to make the menu item name bold */
-  font-family: "Century Gothic", Arial, sans-serif; /* Added to apply Century Gothic font */
+  font-weight: bold;
+  font-family: "Century Gothic", Arial, sans-serif;
+  font-size: 48px; /* 3 times larger font size */
 }
 
 .food-image {
-  max-width: 100px;
+  max-width: 300px; /* 3 times larger max-width */
   height: auto;
-  border-radius: 10px;
+  border-radius: 30px; /* 3 times larger border radius */
 }
 
 .quantity-buttons {
   display: flex;
   align-items: center;
-  gap: 5px;
-  margin-top: 10px; /* Updated to add margin-top */
-  justify-content: center; /* Added to center align buttons */
+  gap: 15px; /* 3 times larger gap */
+  margin-top: 30px; /* 3 times larger margin-top */
+  justify-content: center;
 }
 
 .quantity-buttons button {
   border: none;
   background-color: transparent;
-  font-size: 16px;
+  font-size: 48px; /* 3 times larger font size */
   cursor: pointer;
   color: black;
 }
 
 .quantity-input {
-  width: 30px;
+  width: 90px; /* 3 times larger width */
   text-align: center;
-  font-size: 16px;
+  font-size: 48px; /* 3 times larger font size */
 }
 
 .add-to-basket-button {
@@ -147,47 +147,45 @@ input[type="number"] {
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: white;
-  border: 1px solid #ccc;
-  border-radius: 10px;
-  padding: 40px;
+  border: 3px solid #ccc; /* 3 times thicker border */
+  border-radius: 30px; /* 3 times larger border radius */
+  padding: 120px; /* 3 times larger padding */
   display: none;
   z-index: 999;
-  max-width: 400px;
+  max-width: 1200px; /* 3 times larger max-width */
   width: 80%;
 }
 
 #item-popup-image {
   max-width: 100%;
   height: auto;
-  margin-bottom: 10px;
+  margin-bottom: 30px; /* 3 times larger margin-bottom */
 }
 
 .price {
-  font-size: 18px;
+  font-size: 54px; /* 3 times larger font size */
   color: darkgreen;
 }
 
 .extra-label {
   display: block;
-  margin-bottom: 5px;
+  margin-bottom: 15px; /* 3 times larger margin-bottom */
   text-align: left;
-  font-size: 14px;
+  font-size: 42px; /* 3 times larger font size */
   color: #333;
 }
 
-
 .extra-text {
-  font-size: 14px;
+  font-size: 42px; /* 3 times larger font size */
 }
 
-
 #basket-section {
-  margin-top: 20px;
+  margin-top: 60px; /* 3 times larger margin-top */
 }
 
 #basket-section h2 {
-  font-size: 24px;
-  margin-bottom: 10px;
+  font-size: 72px; /* 3 times larger font size */
+  margin-bottom: 30px; /* 3 times larger margin-bottom */
 }
 
 #basket-list li {
@@ -199,64 +197,60 @@ input[type="number"] {
 .basket-item {
   display: flex;
   align-items: center;
-  margin-top: 10px;
+  margin-top: 30px; /* 3 times larger margin-top */
 }
 
 .basket-item-name {
-  margin-left: 10px;
+  margin-left: 30px; /* 3 times larger margin-left */
   text-align: left;
 }
 
 .remove-icon {
-  margin-left: 5px;
+  margin-left: 15px; /* 3 times larger margin-left */
   cursor: pointer;
-  
 }
 
 .extras-list {
-  font-size: 12px;
-  margin-top: 5px;
-  margin-left: 10px;
+  font-size: 36px; /* 3 times larger font size */
+  margin-top: 15px; /* 3 times larger margin-top */
+  margin-left: 30px; /* 3 times larger margin-left */
 }
 
-  .basket-item-wrapper {
-    display: flex;
-    align-items: baseline;
-    
-  }
-  
-  .remove-icon-container {
-    margin-left: 5px;
-    margin-top: 2px; /* Adjust the margin-top value as needed */
-  }
-  
-  .total-price {
-    margin-top: 25px; /* Adjust the margin-top value as needed */
-    font-size: 28px; /* Adjust the font size value as needed */
-  }
-  
+.basket-item-wrapper {
+  display: flex;
+  align-items: baseline;
+}
 
+.remove-icon-container {
+  margin-left: 15px; /* 3 times larger margin-left */
+  margin-top: 9px; /* 3 times larger margin-top */
+}
+
+.total-price {
+  margin-top: 75px; /* 3 times larger margin-top */
+  font-size: 84px; /* 3 times larger font size */
+}
 
 /* Style for the floating button */
 #floating-button {
   position: fixed;
-  bottom: 20px;
-  right: 20px;
+  bottom: 60px; /* 3 times larger bottom position */
+  right: 60px; /* 3 times larger right position */
   z-index: 999;
 }
 
 #basket-count {
   position: absolute;
-  top: 11px;
-  right: -5px;
+  top: 33px; /* 3 times larger top position */
+  right: -15px; /* 3 times larger right position */
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 20px;
-  height: 20px;
+  width: 60px;
+  height: 60px;
   background-color: rgb(202, 0, 0);
   color: white;
-  font-size: 12px;
+  font-size: 36px; /* 3 times larger font size */
   border-radius: 50%;
 }
 
@@ -264,8 +258,8 @@ input[type="number"] {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 60px;
-  height: 60px;
+  width: 180px; /* 3 times larger width */
+  height: 180px; /* 3 times larger height */
   background-color: #9fc34d;
   border: none;
   border-radius: 50%;
@@ -277,21 +271,18 @@ input[type="number"] {
 }
 
 #basket-icon {
-  width: 40px;
-  height: 40px;
+  width: 120px; /* 3 times larger width */
+  height: 120px; /* 3 times larger height */
   filter: invert(1);
 }
 
-
-
-
 .added-message {
-  margin-top: 50px;
-  margin-bottom: -100px;
+  margin-top: 150px; /* 3 times larger margin-top */
+  margin-bottom: -300px; /* 3 times larger margin-bottom */
   display: none;
-  font-size: 25px;
+  font-size: 75px; /* 3 times larger font size */
 }
 
 #bh-image {
-  width: 70%;
+  width: 210px; /* 3 times larger width */
 }

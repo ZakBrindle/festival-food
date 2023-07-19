@@ -9,6 +9,7 @@ const YOUR_DOMAIN = 'http://localhost:4242';
 app.post('/create-checkout-session', async (req, res) => {
 console.log("Making STRIPE request...");
 
+    
   const session = await stripe.checkout.sessions.create({
     line_items: [
       {
@@ -22,6 +23,8 @@ console.log("Making STRIPE request...");
     cancel_url: `${YOUR_DOMAIN}/cancel.html`,
     automatic_tax: {enabled: true},
   });
+
+  
 
   res.redirect(303, session.url);
 });
