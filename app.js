@@ -54,7 +54,7 @@ const foodOptions = [
     name: "Latte",
     price: 8,
     image: "tea.jpg",
-    extras: [""],
+    extras: [],
     buybuttonid: "buy_btn_1NVgOfEjWpAK8TuWoXi88lfv",
   },
   {
