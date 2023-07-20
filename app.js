@@ -545,3 +545,28 @@ if (bhImage) {
 
 
 }
+
+
+
+// Get references to the elements
+const loginButton = document.querySelector(".login-button");
+const loginContainer = document.querySelector(".login-container");
+
+// Add click event listener to the login button
+loginButton.addEventListener("click", () => {
+  // Hide the login button
+  loginButton.style.display = "none";
+  // Make the login container visible
+  loginContainer.style.display = "block";
+});
+
+
+
+  const guestButton = document.querySelector(".guest-login-button");
+
+  const menu = document.getElementById("menu");
+
+  guestButton.addEventListener("click", function () {
+    loginContainer.style.display = "none";
+    menu.style.display = "block";
+  });

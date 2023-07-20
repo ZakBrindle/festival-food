@@ -28,6 +28,33 @@
         
         <img src="./assets/bh.png" alt="Beatherder" id="bh-image">
       </div>
+
+
+<br><br>
+      <button class="login-button">Login</button>
+  
+
+      <div class="login-container">
+        <h2>Login</h2>
+        <form>
+          <p class="deliveryLoginMessage">Login for delivery. Order food as a guest. </p>
+          <label for="username">Username</label>
+          <input type="text" id="username" name="username" required>
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" required><br>
+          <button class="delivery-login-button" type="submit">Delivery login</button>
+          <br>
+        </form>
+        <button id="guest-login-button" class="guest-login-button">Order as guest</button>
+      </div>
+      <br><br>
+      <br><br>
+
+
+
+
+
+
       <div class="terms-container">
        
         <p>By using this WebApp, you agree to the following terms and conditions, which constitute a legally binding
@@ -97,7 +124,7 @@
                 terms and conditions. If you do not agree with any part of these terms, please refrain from using the WebApp.
             </h3>
         </div>
-        <p class="show-terms" id="show-terms-button" onclick="toggleTerms()">See Full Terms...</p>
+        <p class="show-terms" id="show-terms-button" onclick="toggleTerms()">See Full Terms</p>
     </div>
 
     <script>
@@ -107,18 +134,17 @@
 
             if (termsDiv.style.maxHeight) {
                 termsDiv.style.maxHeight = null;
-                showTermsButton.innerText = "See Full Terms...";
+                showTermsButton.innerText = "See Full Terms";
             } else {
                 termsDiv.style.maxHeight = "100%";
                 showTermsButton.innerText = "Hide Terms";
             }
         }
     </script>
-    
-    <button class="login-button">Login</button>
+    <br><br>
+   
 
-
-    <div id="menu">
+    <div hidden id="menu">
       <h2 hidden class="main-title">Menu</h2>
       <div id="food-list-container">
         <!-- Food items will be dynamically added here -->
