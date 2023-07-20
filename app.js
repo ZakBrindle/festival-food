@@ -552,10 +552,13 @@ if (bhImage) {
 const loginButton = document.querySelector(".login-button");
 const loginContainer = document.querySelector(".login-container");
 
+
+
 // Add click event listener to the login button
 loginButton.addEventListener("click", () => {
   // Hide the login button
   loginButton.style.display = "none";
+
   // Make the login container visible
   loginContainer.style.display = "block";
 });
