@@ -19,7 +19,7 @@
     
   <div id="app-container">
     <img src="./assets/Festival-food-bg.png" alt="Festival Food" id="app-image">
-        
+    <center><img hidden src="./assets/Festival-food-bg.png" alt="Festival Food" id="app-image-centered"></center>
     <div id="notification">
         <h2 class="main-title">Delivery Status</h2>
         <p class="main-text" id="status-text">Delivery is currently <span id="status">Offline</span></p>
@@ -28,9 +28,95 @@
         
         <img src="./assets/bh.png" alt="Beatherder" id="bh-image">
       </div>
+      <div class="terms-container">
+       
+        <p>By using this WebApp, you agree to the following terms and conditions, which constitute a legally binding
+            agreement between you ("the User") and "Festival Food" ("the Company").</p>
+        <div class="terms" id="full-terms">
+            <h3>Order Placement and Delivery:</h3>
 
-     
+            <p>1. The User agrees to provide accurate and up-to-date information while placing an order, including delivery
+                location, contact details, and any specific requirements.</p>
+            <p>2. The Company shall make reasonable efforts to deliver the ordered food to the designated tent. However, the
+                Company does not guarantee that the delivery will be error-free or without delay.</p>
+
+            <p>3. The User acknowledges that the delivery may be affected by unforeseen circumstances, such as extreme weather
+                conditions, festival disruptions, or other events beyond the Company's control.</p>
+
+            <h3>Cancellation and Refunds:</h3>
+
+            <p>1. The User may cancel an order within 2 minutes of placing it to be eligible for a full refund.</p>
+            <p>2. If the User cancels an order after the 2-minute cutoff or after the food has been prepared, no refund shall
+                be provided.</p>
+            <p>3. In the event of a food item being unavailable or if the Company is unable to fulfill an order, the Company
+                shall refund the User for the corresponding amount.</p>
+
+            <h3>Quality and Safety:</h3>
+
+            <p>1. The Company shall make every effort to ensure the food's quality, safety, and adherence to hygienic
+                standards.</p>
+            <p>2. The User acknowledges that the WebApp is an intermediary platform for food ordering and delivery and that
+                the Company is not directly responsible for the preparation of the food items.</p>
+
+            <h3>Liability and Indemnification:</h3>
+
+            <p>1. The User acknowledges that the Company acts solely as a facilitator and shall not be held liable for any
+                direct, indirect, incidental, or consequential damages resulting from the use of the WebApp or any issues
+                related to food ordering and delivery.</p>
+            <p>2. The User agrees to indemnify and hold harmless the Company, its affiliates, employees, and partners from any
+                claims, losses, damages, liabilities, or expenses arising from the User's use of the WebApp.</p>
+
+            <h3>User Conduct:</h3>
+
+            <p>1. The User shall use the "Festival Food" WebApp for lawful purposes only and shall not engage in any fraudulent,
+                abusive, or disruptive behavior.</p>
+            <p>2. The User shall not attempt to tamper with or interfere with the WebApp's functionality or security.</p>
+
+            <h3>Privacy and Data Usage:</h3>
+
+            <p>1. The Company shall collect and process the User's personal information in accordance with its Privacy Policy,
+                which is available on the WebApp.</p>
+            <p>2. The User agrees that the Company may use the provided contact information to communicate important updates,
+                offers, or marketing materials related to the "Festival Food" WebApp.</p>
+
+            <h3>Modification and Termination:</h3>
+
+            <p>1. The Company reserves the right to modify or terminate the "Festival Food" WebApp, its services, or these terms
+                and conditions at any time, without prior notice.</p>
+            <p>2. The User's continued use of the WebApp after any such modifications shall constitute acceptance of the revised
+                terms and conditions.</p>
+
+            <h3>Governing Law and Jurisdiction:</h3>
+
+            <p>1. These terms and conditions shall be governed by the laws of [Your Country/State], without regard to conflicts of
+                law principles.</p>
+            <p>2. Any disputes arising out of or in connection with the use of the "Festival Food" WebApp shall be subject to the
+                exclusive jurisdiction of the courts in [Your Country/State].</p>
+
+            <h3>By using the "Festival Food" WebApp, you acknowledge that you have read, understood, and agreed to these
+                terms and conditions. If you do not agree with any part of these terms, please refrain from using the WebApp.
+            </h3>
+        </div>
+        <p class="show-terms" id="show-terms-button" onclick="toggleTerms()">See Full Terms...</p>
+    </div>
+
+    <script>
+        function toggleTerms() {
+            const termsDiv = document.getElementById('full-terms');
+            const showTermsButton = document.getElementById('show-terms-button');
+
+            if (termsDiv.style.maxHeight) {
+                termsDiv.style.maxHeight = null;
+                showTermsButton.innerText = "See Full Terms...";
+            } else {
+                termsDiv.style.maxHeight = "100%";
+                showTermsButton.innerText = "Hide Terms";
+            }
+        }
+    </script>
     
+    <button class="login-button">Login</button>
+
 
     <div id="menu">
       <h2 hidden class="main-title">Menu</h2>

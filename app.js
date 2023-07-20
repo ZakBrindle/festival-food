@@ -242,14 +242,13 @@ function createFoodItem(food) {
   const foodName = document.createElement("span");
   foodName.textContent = food.name;
   foodName.classList.add("food-name");
-
   const price = document.createElement("span");
   price.textContent = `£${food.price.toFixed(2)}`;
   price.classList.add("price");
-
+  
   const extrasContainer = document.createElement("div");
   extrasContainer.classList.add("extras");
-
+  
   food.extras.forEach((extra) => {
     const label = document.createElement("label");
     label.classList.add("extra-label");
@@ -261,12 +260,16 @@ function createFoodItem(food) {
     label.appendChild(document.createTextNode(extra));
     extrasContainer.appendChild(label);
   });
-
+  
   foodItem.appendChild(foodName);
   foodItem.appendChild(price);
   foodItem.appendChild(extrasContainer);
   
-
+  // Add a space under the extrasContainer
+  const spaceDiv = document.createElement("div");
+  spaceDiv.style.height = "20px"; // Adjust the height as needed
+  foodItem.appendChild(spaceDiv);
+  
   // Create the Stripe Buy button if buybuttonid exists
   if (food.buybuttonid) {
     const stripeBuyButton = createStripeBuyButton(food);
@@ -510,3 +513,35 @@ toggleBasketButtonVisibility();
 
 
 
+function isMobileBrowser() {
+  return /Mobi|Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+}
+
+if (isMobileBrowser()) {
+  // Code for mobile browsers
+  console.log("User is on a mobile device.");
+} else {
+  // Code for desktop browsers
+  console.log("User is on a desktop browser.");
+  document.getElementById("app-image-centered").hidden = false;
+  
+  const appImage = document.getElementById('app-image');
+
+// Check if the image element exists before attempting to remove it
+if (appImage) {
+  // Remove the image element from the DOM
+  appImage.remove();
+}
+
+
+// Find the image element by its ID
+const bhImage = document.getElementById('bh-image');
+
+// Check if the image element exists before attempting to modify it
+if (bhImage) {
+  // Set the width of the image to 100%
+  bhImage.style.width = '28%';
+}
+
+
+}

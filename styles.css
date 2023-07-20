@@ -44,6 +44,8 @@ h1 {
   margin-left: -25px;
 }
 
+
+
 /* Increase the size of the checkboxes */
 input[type="checkbox"] {
   transform: scale(1.5); /* Adjust the scale factor as needed */
@@ -307,4 +309,42 @@ input[type="number"] {
 
 #bh-image {
   width: 50%; /* 3 times larger width */
+}
+
+
+
+.terms-container {
+  max-width: 360px;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 12px;
+  color: darkgrey;
+}
+
+.terms {
+  max-height: 80px;
+  overflow: hidden;
+}
+
+.show-terms {
+  color: lightblue;
+  cursor: pointer;
+}
+
+
+.login-button {
+  border: none;
+  border-radius: 50px;
+  padding: 12px 80px; /* Adjust the padding to increase the width */
+  font-size: 16px;
+  background-color: lightblue;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  display: block; /* Add this line to make it a block-level element */
+  margin: 0 auto; /* Add this line to center horizontally */
+}
+
+.login-button:hover {
+  background-color: #5a9fc1;
 }
