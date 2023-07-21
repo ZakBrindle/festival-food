@@ -551,6 +551,8 @@ if (bhImage) {
 // Get references to the elements
 const loginButton = document.querySelector(".login-button");
 const loginContainer = document.querySelector(".login-container");
+const settingsContainer = document.querySelector(".settings-container");
+
 
 
 
@@ -559,8 +561,12 @@ loginButton.addEventListener("click", () => {
   // Hide the login button
   loginButton.style.display = "none";
 
+
+
   // Make the login container visible
   loginContainer.style.display = "block";
+
+
 });
 
 
@@ -571,5 +577,89 @@ loginButton.addEventListener("click", () => {
 
   guestButton.addEventListener("click", function () {
     loginContainer.style.display = "none";
+    settingsContainer.style.display = "block";
+    if (toggle.checked) {
     menu.style.display = "block";
+    }
   });
+
+  const logoutButton = document.getElementById("logout-button");
+
+
+  logoutButton.addEventListener("click", function () {
+    loginContainer.style.display = "block";
+    settingsContainer.style.display = "none";
+    if (toggle.checked) {
+    menu.style.display = "block";
+    }
+   
+  });
+
+
+
+  const toggle = document.getElementById('delivery-toggle');
+const statusElement = document.getElementById('status');
+const menuItems = document.getElementById('menu');
+
+
+toggle.addEventListener('change', function() {
+  if (toggle.checked) {
+    // Toggle is ON
+    statusElement.innerHTML = 'Active';
+    statusElement.style.color = 'green';
+    menu.style.display = "block";
+  } else {
+    // Toggle is OFF
+    statusElement.innerHTML = 'Disabled';
+    statusElement.style.color = 'red';
+    menu.style.display = "none";
+
+
+
+  }
+});
+
+
+
+
+
+  // Call the function to load Stripe and retrieve order details
+  const orderId = 'pi_3NVgtPEjWpAK8TuW1DUyTZ0F';
+
+
+   // Function to load Stripe script asynchronously
+   function loadStripe(callback) {
+    const script = document.createElement('script');
+    script.src = 'https://js.stripe.com/v3/';
+    script.onload = callback;
+    document.body.appendChild(script);
+  }
+
+  // Function to retrieve order details
+  async function getOrderDetails(orderId) {
+    try {
+      // Replace 'YOUR_STRIPE_API_KEY' with your actual Stripe API key
+      const stripe = Stripe('pk_live_51NVd2MEjWpAK8TuWU2ViGWscfzmVYt7KvTy2UoRWYR6KwJapFdGIwp3gzfZVnr8LPyqYhrOuoN3IVVof2J2NAqMW00GYLxjotP');
+
+      // Use the Stripe API to retrieve the order
+      const order = await stripe.orders.retrieve(orderId);
+
+      // Extract and display order details
+      console.log('Order ID:', order.id);
+      console.log('Amount:', order.amount);
+      console.log('Currency:', order.currency);
+      console.log('Status:', order.status);
+
+      // Check if there are extra notes
+      if (order.metadata && order.metadata.notes) {
+        console.log('Extra Notes:', order.metadata.notes);
+      } else {
+        console.log('No extra notes found for this order.');
+      }
+    } catch (error) {
+      console.error('Error retrieving order:', error.message);
+    }
+  }
+
+ 
+  loadStripe(() => getOrderDetails(orderId));

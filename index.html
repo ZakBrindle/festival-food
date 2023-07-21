@@ -16,13 +16,14 @@
 
 </head>
 <body>
+
     
   <div id="app-container">
     <img src="./assets/Festival-food-bg.png" alt="Festival Food" id="app-image">
     <center><img hidden src="./assets/Festival-food-bg.png" alt="Festival Food" id="app-image-centered"></center>
     <div id="notification">
         <h2 class="main-title">Delivery Status</h2>
-        <p class="main-text" id="status-text">Delivery is currently <span id="status">Offline</span></p>
+        <p class="main-text" id="status-text">Delivery is currently <span id="status">Offline</span>. <br><br>Check back soon!</p>
      
         <br>
         
@@ -34,6 +35,19 @@
       <button class="login-button">Login</button>
   
 
+      <div hidden class="settings-container">
+
+        <div class="toggle-container">
+          <input type="checkbox" id="delivery-toggle">
+          <label for="delivery-toggle">Toggle Delivery</label>
+        </div>
+        <br>
+        <button class="pill-button" id="order-history-btn" type="submit">Order History</button><br>
+        <button class="pill-button" id="logout-button" type="submit">Logout</button>
+
+
+        </div>
+<br>
       <div class="login-container">
        
         <form>
