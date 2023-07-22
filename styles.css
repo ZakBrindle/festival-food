@@ -185,6 +185,7 @@ input[type="number"] {
 .toggle-container {
   text-align: center;
   margin-bottom: 10px;
+  margin-right: -20px;
 }
 
 .toggle-container input[type="checkbox"] {
@@ -211,10 +212,10 @@ input[type="number"] {
 }
 
 
-
 .menu-item-toggle-container {
   text-align: center;
   margin-bottom: 10px;
+  
 }
 
 .menu-item-toggle-container input[type="checkbox"] {
@@ -412,8 +413,6 @@ hr {
   color: rgb(151, 0, 0);
 }
 
-
-.stripe-buy-button {
-  transform: scale(2); /* increase the size twice */
-  display: inline-block; /* Add this line if the button becomes a block element */
+stripe-buy-button {
+  font-size: 2em; /* or any other size that fits your design */
 }

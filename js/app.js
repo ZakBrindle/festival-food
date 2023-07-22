@@ -91,7 +91,6 @@ function createStripeBuyButton(food) {
 }
 
 
-
 function createFoodItem(food, index) {
   const foodItemWrapper = document.createElement("div");
   foodItemWrapper.classList.add("food-item-wrapper");
@@ -116,30 +115,11 @@ function createFoodItem(food, index) {
   price.textContent = `£${food.price.toFixed(2)}`;
   price.classList.add("price");
 
-  const extrasContainer = document.createElement("div");
-  extrasContainer.classList.add("extras");
-
-  food.extras.forEach((extra) => {
-    const label = document.createElement("label");
-    label.classList.add("extra-label");
-
-    const checkbox = document.createElement("input");
-    checkbox.type = "checkbox";
-    checkbox.name = `extras-${getFoodItemId(food)}`;
-    checkbox.value = extra;
-
-    label.appendChild(checkbox);
-    label.appendChild(document.createTextNode(extra));
-
-    extrasContainer.appendChild(label);
-  });
-
   const foodInfoWrapper = document.createElement("div");
   foodInfoWrapper.classList.add("food-info-wrapper");
 
   foodInfoWrapper.appendChild(foodNameWrapper);
   foodInfoWrapper.appendChild(price);
-  foodInfoWrapper.appendChild(extrasContainer);
 
   const spaceDiv = document.createElement("div");
   spaceDiv.style.height = "20px";
@@ -154,6 +134,14 @@ function createFoodItem(food, index) {
   spaceDiv2.style.height = "30px";
   foodInfoWrapper.appendChild(spaceDiv2);
 
+  foodItem.appendChild(foodInfoWrapper);
+
+  
+  foodItemWrapper.appendChild(foodImage);
+  foodItemWrapper.appendChild(foodItem);
+  
+
+  
   const menuItemToggleContainer = document.createElement("div");
   menuItemToggleContainer.classList.add("menu-item-toggle-container");
   menuItemToggleContainer.style.display = "none";
@@ -170,11 +158,9 @@ function createFoodItem(food, index) {
   menuItemToggleContainer.appendChild(menuItemToggle);
   menuItemToggleContainer.appendChild(menuItemToggleLabel);
 
-  foodInfoWrapper.appendChild(menuItemToggleContainer);
+  foodItem.appendChild(menuItemToggleContainer);  // Append menuItemToggleContainer to foodItem
 
-  foodItem.appendChild(foodInfoWrapper);
-  foodItemWrapper.appendChild(foodImage);
-  foodItemWrapper.appendChild(foodItem);
+
 
   return foodItemWrapper;
 }
