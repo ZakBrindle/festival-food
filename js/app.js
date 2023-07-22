@@ -419,7 +419,9 @@ const capacity_toggle = document.getElementById('capacity-toggle');
 toggle.addEventListener('change', function() {
   if (toggle.checked) {
     // Toggle is ON
+    menu.style.display = "block";
     turnDeliveryOn();    
+
 
   } else {
        turnDeliveryOff();    
