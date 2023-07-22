@@ -368,16 +368,45 @@ input[type="number"] {
   padding: 12px 80px;
   border-radius: 50px;
   background-color: #ff8383;
-  color: white;
+  color: #743a3a;
   
   display: block;
   margin: 0 auto;
   width: 50%;
+  font-size: 24px;
 }
 
 .toggle-container input[type="checkbox"]:checked + label {
-  background-color: rgb(138, 226, 164);
-  color: white;
+  background-color: #5ac15a;
+  color: #2d642d;
+}
+
+
+
+.menu-item-toggle-container {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.menu-item-toggle-container input[type="checkbox"] {
+  display: none;
+}
+
+.menu-item-toggle-container label {
+  cursor: pointer;
+  padding: 12px 80px;
+  border-radius: 50px;
+  background-color: #ff8383;
+  color: #834242;
+  
+  display: block;
+  margin: 0 auto;
+  width: 43%;
+}
+
+.menu-item-toggle-container input[type="checkbox"]:checked + label {
+  background-color: #5ac15a;
+  color: #2d642d;
 }
 
 
@@ -395,16 +424,16 @@ input[type="number"] {
   padding: 12px 80px;
   border-radius: 50px;
   background-color: #ff8383;
-  color: white;
-  
+  color: #834242;
+  font-size: 24px;
   display: block;
   margin: 0 auto;
   width: 50%;
 }
 
 .toggle-container-capacity input[type="checkbox"]:checked + label {
-  background-color: rgb(138, 226, 164);
-  color: white;
+  background-color: #5ac15a;
+  color: #2d642d;
 }
 
 .login-button {
@@ -412,8 +441,8 @@ input[type="number"] {
   border-radius: 50px;
   padding: 12px 80px;
   font-size: 24px;
-  background-color: rgb(151, 212, 233);
-  color: white;
+  background-color: #5a9fc1;
+  color: #2b4e5f;
   cursor: pointer;
   transition: background-color 0.3s ease;
   display: block;
@@ -425,8 +454,8 @@ input[type="number"] {
   border-radius: 50px;
   padding: 12px 80px;
   font-size: 24px;
-  background-color: rgb(151, 212, 233);
-  color: white;
+  background-color: #5a9fc1;
+  color: #2b4e5f;
   cursor: pointer;
   transition: background-color 0.3s ease;
   display: block;
@@ -435,14 +464,18 @@ input[type="number"] {
 }
 
 .pill-button:hover {
-  background-color: #5a9fc1;
+  background-color: rgb(151, 212, 233);
+  color: #5a9fc1;
 }
 
 
 
 .login-button:hover {
-  background-color: #5a9fc1;
+  background-color: rgb(151, 212, 233);
+  color: #5a9fc1;
 }
+
+
 
 /* Rounded input fields */
 input[type="text"],
@@ -476,8 +509,8 @@ hr {
   border-radius: 50px;
   padding: 12px 80px;
   font-size: 24px;
-  background-color: rgb(151, 212, 233);
-  color: white;
+  background-color: #5a9fc1;
+  color: #294655;
   cursor: pointer;
   transition: background-color 0.3s ease;
   display: block;
@@ -486,7 +519,9 @@ hr {
 }
 
 .delivery-login-button:hover {
-  background-color: #5a9fc1;
+  background-color: rgb(151, 212, 233);
+  color: #5a9fc1;
+
 }
 
 .guest-login-button {
@@ -494,8 +529,8 @@ hr {
   border-radius: 50px;
   padding: 12px 80px;
   font-size: 24px;
-  background-color: rgb(147, 233, 183);
-  color: white;
+  background-color: #5ac15a;
+  color: #2d642d;
   cursor: pointer;
   transition: background-color 0.3s ease;
   display: block;
@@ -508,21 +543,31 @@ hr {
   border-radius: 50px;
   padding: 12px 80px;
   font-size: 24px;
-  background-color: rgb(207, 136, 130);
-  color: white;
+  background-color: #834242;;
+  color: #bbb1b1;;
   cursor: pointer;
-  transition: background-color 0.3s ease;
   display: block;
   margin: 0 auto;
   width: 100%;
 }
 
-.logout-button:hover {
-  background-color: #c15a5a;
+
+
+#logout-button.pill-button {
+  background-color: #834242;;
 }
 
+#logout-button.pill-button:hover {
+  background-color: #bbb1b1;
+  color: #834242;;
+
+}
+
+
 .guest-login-button:hover {
-  background-color: #5ac15a;
+  background-color: rgb(147, 233, 183);
+  color: #2d642d;
+
 }
 
 

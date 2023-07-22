@@ -227,7 +227,7 @@ function createStripeBuyButton(food) {
   return buyButton;
 }
 
-function createFoodItem(food) {
+function createFoodItem(food, index) {
   const foodItemWrapper = document.createElement("div");
   foodItemWrapper.classList.add("food-item-wrapper");
 
@@ -269,6 +269,9 @@ function createFoodItem(food) {
   const spaceDiv = document.createElement("div");
   spaceDiv.style.height = "20px"; // Adjust the height as needed
   foodItem.appendChild(spaceDiv);
+
+   
+
   
   // Create the Stripe Buy button if buybuttonid exists
   if (food.buybuttonid) {
@@ -292,12 +295,56 @@ function createFoodItem(food) {
     foodItem.appendChild(addToBasketButton);
   }
 
+  const spaceDiv2 = document.createElement("div");
+  spaceDiv2.style.height = "30px"; // Adjust the height as needed
+  foodItem.appendChild(spaceDiv2);
+
+   // Create the item availability toggle
+   const menuItemToggleContainer = document.createElement("div");
+   menuItemToggleContainer.classList.add("menu-item-toggle-container");
+   menuItemToggleContainer.style.display = "none"; // Hide the container initially
+ 
+   const menuItemToggle = document.createElement("input");
+   menuItemToggle.type = "checkbox";
+   menuItemToggle.id = `menu-item-toggle-${index}`; // Unique id
+   menuItemToggle.checked = true; // Checkbox is checked by default
+   const menuItemToggleLabel = document.createElement("label");
+   menuItemToggleLabel.htmlFor = `menu-item-toggle-${index}`; // Corresponding for attribute
+   menuItemToggleLabel.textContent = "Item Available";
+   
+   menuItemToggleContainer.appendChild(menuItemToggle);
+   menuItemToggleContainer.appendChild(menuItemToggleLabel);
+ 
+   foodItem.appendChild(menuItemToggleContainer);
   
 
   foodItemWrapper.appendChild(foodImage);
   foodItemWrapper.appendChild(foodItem);
   return foodItemWrapper;
 }
+
+
+
+function showFoodToggles() {
+  // Get all elements with class "menu-item-toggle-container"
+  const menuToggleContainers = document.querySelectorAll(".menu-item-toggle-container");
+
+  // Loop through all found elements and set display style to block
+  menuToggleContainers.forEach(function(toggle) {
+    toggle.style.display = "block";
+  });
+}
+
+function hideFoodToggles() {
+  // Get all elements with class "menu-item-toggle-container"
+  const menuToggleContainers = document.querySelectorAll(".menu-item-toggle-container");
+
+  // Loop through all found elements and set display style to none
+  menuToggleContainers.forEach(function(toggle) {
+    toggle.style.display = "none";
+  });
+}
+
 
 
 
@@ -322,8 +369,10 @@ function updateQuantityPopup(foodItemId, change) {
 
 // Add food options to the menu as div elements
 const foodListContainer = document.getElementById("food-list-container");
+var foodItemCount = 1;
 foodOptions.forEach((food) => {
-  const foodItem = createFoodItem(food);
+  const foodItem = createFoodItem(food, foodItemCount);
+  foodItemCount+=1;
   foodListContainer.appendChild(foodItem);
 });
 
@@ -356,6 +405,8 @@ const deliveryAddresses = generateDeliveryAddresses();
   
     return addresses;
   }
+
+
   
   // Function to populate the delivery addresses based on the selected option
   function populateDeliveryAddresses() {
@@ -560,7 +611,7 @@ const settingsContainer = document.querySelector(".settings-container");
 loginButton.addEventListener("click", () => {
   // Hide the login button
   loginButton.style.display = "none";
-
+  showFoodToggles();
   document.getElementById("notification").style.display = "none";
 
 
@@ -578,7 +629,10 @@ loginButton.addEventListener("click", () => {
 
   guestButton.addEventListener("click", function () {
     loginContainer.style.display = "none";
-    settingsContainer.style.display = "block";
+
+    // MOVE THIS TO THE LOGIN, THIS SHOULD NOT BE AVAILABLE FOR GUESTS
+    settingsContainer.style.display = "block";  // ONLY IN GUEST FOR TESTING
+    showFoodToggles();  // --------------       // ONLY IN GUEST FOR TESTING
     
     document.getElementById("notification").style.display = "block";
     if (toggle.checked) {
@@ -591,6 +645,7 @@ loginButton.addEventListener("click", () => {
 
 
   logoutButton.addEventListener("click", function () {
+    hideFoodToggles();
     loginContainer.style.display = "block";
     settingsContainer.style.display = "none";
     document.getElementById("notification").style.display = "block";
