@@ -1,4 +1,5 @@
 
+import { db } from "./setupFirebase.js";
 
 var accountID = ""; // WHEN LOGGED IN STORE ACCOUNTID 
 
@@ -233,18 +234,20 @@ function turnDeliveryCapacity()
 
 }
 
-updateDelivery();
-function updateDelivery()
-{
-  let deliveryStatus;
-
-  firebase.database().ref('deliveryStatus').on('value', (snapshot) => {
-  deliveryStatus = snapshot.val();
-  console.log("Firebase: Delivery status - "+ deliveryStatus);
-});
 
 
+  updateDelivery();
+function updateDelivery() {
+    let deliveryStatus;
+  
+    db.ref('deliveryStatus').on('value', (snapshot) => {
+      deliveryStatus = snapshot.val();
+      console.log("Firebase: Delivery status - " + deliveryStatus);
+    });
+  
+  
 
+  
 
 const statusElement = document.getElementById('status');
 const menu = document.getElementById("menu");
