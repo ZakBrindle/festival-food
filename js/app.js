@@ -232,23 +232,23 @@ function turnDeliveryCapacity()
   updateDelivery();
 
 }
-/*
-import { setupFirebase } from "./js/setupFirebase.js";
+
+//import { setupFirebase } from "./js/setupFirebase.js";
 
 // Get the app and db objects from setupFirebase
-const { app, db } = setupFirebase();
+//const { app, db } = setupFirebase();
 
   updateDelivery();
   function updateDelivery() {
-    const { db } = window.firebaseApp;
+    //const { db } = window.firebaseApp;
 
-    let deliveryStatus;
+   // let deliveryStatus;
     
-    db.ref('deliveryStatus').on('value', (snapshot) => {
-      deliveryStatus = snapshot.val();
-      console.log("Firebase: Delivery status - " + deliveryStatus);
-    });
-  */
+    //db.ref('deliveryStatus').on('value', (snapshot) => {
+    //  deliveryStatus = snapshot.val();
+    //  console.log("Firebase: Delivery status - " + deliveryStatus);
+    //});
+  
   
 
   
