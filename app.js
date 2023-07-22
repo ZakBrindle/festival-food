@@ -234,7 +234,9 @@ function turnDeliveryCapacity()
 
 }
 
-
+// Instead, use the relative path for the Firebase SDK:
+import { initializeApp } from "./node_modules/firebase/app.js";
+import { getDatabase } from "./node_modules/firebase/database.js";
 
   updateDelivery();
 function updateDelivery() {
