@@ -233,6 +233,9 @@ function turnDeliveryCapacity()
 
 }
 
+// Import the setupFirebase function from setupFirebase.js
+import { setupFirebase } from "./setupFirebase.js";
+
 // Get the app and db objects from setupFirebase
 const { app, db } = setupFirebase();
 

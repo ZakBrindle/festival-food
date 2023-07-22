@@ -3,6 +3,8 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/8.6.1/firebase
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/8.6.1/firebase-analytics.js";
 import { getDatabase } from "https://www.gstatic.com/firebasejs/8.6.1/firebase-database.js";
 
+
+
 const firebaseConfig = {
   apiKey: "AIzaSyDweH-W6wCsTOvOsWIZf-Yl6mK_T1okQ4E",
   authDomain: "festival-food-db.firebaseapp.com",
