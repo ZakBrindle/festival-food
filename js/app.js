@@ -90,6 +90,8 @@ function createStripeBuyButton(food) {
   return buyButton;
 }
 
+
+
 function createFoodItem(food, index) {
   const foodItemWrapper = document.createElement("div");
   foodItemWrapper.classList.add("food-item-wrapper");
@@ -105,86 +107,78 @@ function createFoodItem(food, index) {
   const foodName = document.createElement("span");
   foodName.textContent = food.name;
   foodName.classList.add("food-name");
+
+  const foodNameWrapper = document.createElement("div");
+  foodNameWrapper.classList.add("food-name-wrapper");
+  foodNameWrapper.appendChild(foodName);
+
   const price = document.createElement("span");
   price.textContent = `£${food.price.toFixed(2)}`;
   price.classList.add("price");
-  
+
   const extrasContainer = document.createElement("div");
   extrasContainer.classList.add("extras");
-  
+
   food.extras.forEach((extra) => {
     const label = document.createElement("label");
     label.classList.add("extra-label");
+
     const checkbox = document.createElement("input");
     checkbox.type = "checkbox";
     checkbox.name = `extras-${getFoodItemId(food)}`;
     checkbox.value = extra;
+
     label.appendChild(checkbox);
     label.appendChild(document.createTextNode(extra));
+
     extrasContainer.appendChild(label);
   });
-  
-  foodItem.appendChild(foodName);
-  foodItem.appendChild(price);
-  foodItem.appendChild(extrasContainer);
-  
-  // Add a space under the extrasContainer
+
+  const foodInfoWrapper = document.createElement("div");
+  foodInfoWrapper.classList.add("food-info-wrapper");
+
+  foodInfoWrapper.appendChild(foodNameWrapper);
+  foodInfoWrapper.appendChild(price);
+  foodInfoWrapper.appendChild(extrasContainer);
+
   const spaceDiv = document.createElement("div");
-  spaceDiv.style.height = "20px"; // Adjust the height as needed
-  foodItem.appendChild(spaceDiv);
+  spaceDiv.style.height = "20px";
+  foodInfoWrapper.appendChild(spaceDiv);
 
-   
-
-  
-  // Create the Stripe Buy button if buybuttonid exists
   if (food.buybuttonid) {
     const stripeBuyButton = createStripeBuyButton(food);
-    foodItem.appendChild(stripeBuyButton);
-  } else {
-    // If buybuttonid doesn't exist, create the "Add to Basket" button
-    const addToBasketButton = document.createElement("button");
-    addToBasketButton.textContent = "Add to Basket";
-    addToBasketButton.classList.add("add-to-basket-button");
-
-    const addedMessage = document.createElement("span");
-    addedMessage.textContent = "Added to basket 🛒";
-    addedMessage.classList.add("added-message");
-    foodItem.appendChild(addedMessage); // Add the "Added to basket" message initially (hidden by default)
-
-    addToBasketButton.addEventListener("click", () => {
-      addToBasket(food, 1, getFoodItemId(food), foodItem, addedMessage); // Pass the addedMessage element to the addToBasket function
-    });
-
-    foodItem.appendChild(addToBasketButton);
+    foodInfoWrapper.appendChild(stripeBuyButton);
   }
 
   const spaceDiv2 = document.createElement("div");
-  spaceDiv2.style.height = "30px"; // Adjust the height as needed
-  foodItem.appendChild(spaceDiv2);
+  spaceDiv2.style.height = "30px";
+  foodInfoWrapper.appendChild(spaceDiv2);
 
-   // Create the item availability toggle
-   const menuItemToggleContainer = document.createElement("div");
-   menuItemToggleContainer.classList.add("menu-item-toggle-container");
-   menuItemToggleContainer.style.display = "none"; // Hide the container initially
- 
-   const menuItemToggle = document.createElement("input");
-   menuItemToggle.type = "checkbox";
-   menuItemToggle.id = `menu-item-toggle-${index}`; // Unique id
-   menuItemToggle.checked = true; // Checkbox is checked by default
-   const menuItemToggleLabel = document.createElement("label");
-   menuItemToggleLabel.htmlFor = `menu-item-toggle-${index}`; // Corresponding for attribute
-   menuItemToggleLabel.textContent = "Item Available";
-   
-   menuItemToggleContainer.appendChild(menuItemToggle);
-   menuItemToggleContainer.appendChild(menuItemToggleLabel);
- 
-   foodItem.appendChild(menuItemToggleContainer);
-  
+  const menuItemToggleContainer = document.createElement("div");
+  menuItemToggleContainer.classList.add("menu-item-toggle-container");
+  menuItemToggleContainer.style.display = "none";
 
+  const menuItemToggle = document.createElement("input");
+  menuItemToggle.type = "checkbox";
+  menuItemToggle.id = `menu-item-toggle-${index}`;
+  menuItemToggle.checked = true;
+
+  const menuItemToggleLabel = document.createElement("label");
+  menuItemToggleLabel.htmlFor = `menu-item-toggle-${index}`;
+  menuItemToggleLabel.textContent = "Item Available";
+
+  menuItemToggleContainer.appendChild(menuItemToggle);
+  menuItemToggleContainer.appendChild(menuItemToggleLabel);
+
+  foodInfoWrapper.appendChild(menuItemToggleContainer);
+
+  foodItem.appendChild(foodInfoWrapper);
   foodItemWrapper.appendChild(foodImage);
   foodItemWrapper.appendChild(foodItem);
+
   return foodItemWrapper;
 }
+
 
 
 
