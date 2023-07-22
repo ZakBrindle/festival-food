@@ -233,6 +233,8 @@ function turnDeliveryCapacity()
 
 }
 
+// Get the app and db objects from setupFirebase
+const { app, db } = setupFirebase();
 
   updateDelivery();
   function updateDelivery() {
