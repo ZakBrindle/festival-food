@@ -1,19 +1,5 @@
-import * as firebase from "firebase/app";
-import "firebase/database";
 
-const firebaseConfig = {
-  apiKey: "AIzaSyDweH-W6wCsTOvOsWIZf-Yl6mK_T1okQ4E",
-  authDomain: "festival-food-db.firebaseapp.com",
-  projectId: "festival-food-db",
-  storageBucket: "festival-food-db.appspot.com",
-  messagingSenderId: "174006042170",
-  appId: "1:174006042170:web:3fc5a7f3b4600175ab7f03",
-  measurementId: "G-Y1KG8W3CKP"
-};
 
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
 
 var accountID = ""; // WHEN LOGGED IN STORE ACCOUNTID 
 
@@ -226,12 +212,14 @@ function hideFoodToggles() {
 function turnDeliveryOn()
 {
   firebase.database().ref('deliveryStatus').set("ON");
+  updateDelivery();
 }
 
 function turnDeliveryOff()
 {
 
   firebase.database().ref('deliveryStatus').set("OFF");
+  updateDelivery();
 
 
 }
@@ -239,15 +227,21 @@ function turnDeliveryOff()
 function turnDeliveryCapacity()
 {
   firebase.database().ref('deliveryStatus').set("CAPACITY");
+  updateDelivery();
+
 }
 
+updateDelivery();
 function updateDelivery()
 {
   let deliveryStatus;
 
   firebase.database().ref('deliveryStatus').on('value', (snapshot) => {
   deliveryStatus = snapshot.val();
+  console.log("Firebase: Delivery status - "+ deliveryStatus);
 });
+
+
 
 
 const statusElement = document.getElementById('status');
@@ -399,6 +393,8 @@ loginButton.addEventListener("click", () => {
   
   const toggle = document.getElementById('delivery-toggle');
 const menuItems = document.getElementById('menu');
+const capacity_toggle = document.getElementById('capacity-toggle');
+
 
   logoutButton.addEventListener("click", function () {
     hideFoodToggles();
@@ -422,7 +418,6 @@ toggle.addEventListener('change', function() {
 
 });
 
-
 capacity_toggle.addEventListener('change', function() {
   if (capacity_toggle.checked) {
     // Toggle is ON
@@ -435,45 +430,3 @@ capacity_toggle.addEventListener('change', function() {
 
 
 
-
-
-  // Call the function to load Stripe and retrieve order details
-  const orderId = 'pi_3NVgtPEjWpAK8TuW1DUyTZ0F';
-
-
-   // Function to load Stripe script asynchronously
-   function loadStripe(callback) {
-    const script = document.createElement('script');
-    script.src = 'https://js.stripe.com/v3/';
-    script.onload = callback;
-    document.body.appendChild(script);
-  }
-
-  // Function to retrieve order details
-  async function getOrderDetails(orderId) {
-    try {
-      // Replace 'YOUR_STRIPE_API_KEY' with your actual Stripe API key
-      const stripe = Stripe('pk_live_51NVd2MEjWpAK8TuWU2ViGWscfzmVYt7KvTy2UoRWYR6KwJapFdGIwp3gzfZVnr8LPyqYhrOuoN3IVVof2J2NAqMW00GYLxjotP');
-
-      // Use the Stripe API to retrieve the order
-      const order = await stripe.orders.retrieve(orderId);
-
-      // Extract and display order details
-      console.log('Order ID:', order.id);
-      console.log('Amount:', order.amount);
-      console.log('Currency:', order.currency);
-      console.log('Status:', order.status);
-
-      // Check if there are extra notes
-      if (order.metadata && order.metadata.notes) {
-        console.log('Extra Notes:', order.metadata.notes);
-      } else {
-        console.log('No extra notes found for this order.');
-      }
-    } catch (error) {
-      console.error('Error retrieving order:', error.message);
-    }
-  }
-
- 
-  loadStripe(() => getOrderDetails(orderId));
