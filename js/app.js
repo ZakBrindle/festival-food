@@ -240,8 +240,10 @@ const { app, db } = setupFirebase();
 
   updateDelivery();
   function updateDelivery() {
+    const { db } = window.firebaseApp;
+
     let deliveryStatus;
-  
+    
     db.ref('deliveryStatus').on('value', (snapshot) => {
       deliveryStatus = snapshot.val();
       console.log("Firebase: Delivery status - " + deliveryStatus);

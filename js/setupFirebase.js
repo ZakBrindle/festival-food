@@ -1,10 +1,6 @@
 // setupFirebase.js
 
-// Load the Firebase SDK URLs directly
-import { initializeApp } from "https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js";
-import { getAnalytics } from "https://www.gstatic.com/firebasejs/8.6.1/firebase-analytics.js";
-import { getDatabase } from "https://www.gstatic.com/firebasejs/8.6.1/firebase-database.js";
-
+// Firebase configuration
 const firebaseConfig = {
   apiKey: "AIzaSyDweH-W6wCsTOvOsWIZf-Yl6mK_T1okQ4E",
   authDomain: "festival-food-db.firebaseapp.com",
@@ -17,13 +13,12 @@ const firebaseConfig = {
 
 // Function to set up Firebase
 function setupFirebase() {
-  const app = initializeApp(firebaseConfig);
-  const analytics = getAnalytics(app);
-  const db = getDatabase(app);
+  const app = firebase.initializeApp(firebaseConfig);
+  const db = firebase.database();
 
-  // Export the Firebase app and database for use in other modules
+  // Return the Firebase app and database for use in app.js
   return { app, db };
 }
 
-// Call the setupFirebase function to initialize Firebase and export app and db
-setupFirebase();
+// Call the setupFirebase function and store the returned app and db objects in window
+window.firebaseApp = setupFirebase();
