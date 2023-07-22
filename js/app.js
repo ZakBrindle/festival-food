@@ -242,7 +242,7 @@ function turnDeliveryCapacity()
   function updateDelivery() {
     //const { db } = window.firebaseApp;
 
-   // let deliveryStatus;
+   let deliveryStatus = "OFF";
     
     //db.ref('deliveryStatus').on('value', (snapshot) => {
     //  deliveryStatus = snapshot.val();
