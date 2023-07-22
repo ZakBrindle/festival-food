@@ -65,21 +65,6 @@ label {
   font-weight: bold;
 }
 
-button {
-  margin-top: 60px; /* 3 times larger margin-top */
-  background-color: #83a342;
-  color: white;
-  border: none;
-  padding: 30px 60px; /* 3 times larger padding */
-  font-size: 48px; /* 3 times larger font size */
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-button:hover {
-  background-color: #9fc34d;
-}
-
 select,
 input[type="text"],
 input[type="number"] {
@@ -120,65 +105,16 @@ input[type="number"] {
   border-radius: 30px; /* 3 times larger border radius */
 }
 
-.quantity-buttons {
-  display: flex;
-  align-items: center;
-  gap: 15px; /* 3 times larger gap */
-  margin-top: 30px; /* 3 times larger margin-top */
-  justify-content: center;
-}
 
-.quantity-buttons button {
-  border: none;
-  background-color: transparent;
-  font-size: 48px; /* 3 times larger font size */
-  cursor: pointer;
-  color: black;
-}
 
-.quantity-input {
-  width: 90px; /* 3 times larger width */
-  text-align: center;
-  font-size: 48px; /* 3 times larger font size */
-}
 
-.add-to-basket-button {
-  margin-bottom: 0;
-}
 
-#item-popup {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: white;
-  border: 3px solid #ccc; /* 3 times thicker border */
-  border-radius: 30px; /* 3 times larger border radius */
-  padding: 120px; /* 3 times larger padding */
-  display: none;
-  z-index: 999;
-  max-width: 1200px; /* 3 times larger max-width */
-  width: 80%;
-}
-
-#item-popup-image {
-  max-width: 100%;
-  height: auto;
-  margin-bottom: 30px; /* 3 times larger margin-bottom */
-}
 
 .price {
   font-size: 54px; /* 3 times larger font size */
   color: darkgreen;
 }
 
-.extra-label {
-  display: block;
-  margin-bottom: 15px; /* 3 times larger margin-bottom */
-  text-align: left;
-  font-size: 42px; /* 3 times larger font size */
-  color: #333;
-}
 
 .main-title {   
   text-align: center;
@@ -187,11 +123,6 @@ input[type="number"] {
   margin-bottom: -30px;
 }
 
-.empty-basket-element {   
-  text-align: center;
-  font-size: 48px; /* 3 times larger font size */
-  color: #333;
-}
 
 .main-text {   
   text-align: center;
@@ -202,111 +133,7 @@ input[type="number"] {
   font-size: 42px; /* 3 times larger font size */
 }
 
-#basket-section {
-  margin-top: 60px; /* 3 times larger margin-top */
-}
 
-#basket-section h2 {
-  font-size: 72px; /* 3 times larger font size */
-  margin-bottom: 30px; /* 3 times larger margin-bottom */
-}
-
-#basket-list li {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.basket-item {
-  display: flex;
-  align-items: center;
-  margin-top: 30px; /* 3 times larger margin-top */
-  font-size: 32px; /* 3 times larger font size */
-}
-
-.basket-item-name {
-  margin-left: 30px; /* 3 times larger margin-left */
-  text-align: left;
-}
-
-.remove-icon {
-  margin-left: 15px; /* 3 times larger margin-left */
-  cursor: pointer;
-  
-}
-
-.extras-list {
-  font-size: 36px; /* 3 times larger font size */
-  margin-top: 15px; /* 3 times larger margin-top */
-  margin-left: 30px; /* 3 times larger margin-left */
-}
-
-.basket-item-wrapper {
-  display: flex;
-  align-items: baseline;
-}
-
-.remove-icon-container {
-  margin-left: 15px; /* 3 times larger margin-left */
-  margin-top: 9px; /* 3 times larger margin-top */
-}
-
-.total-price {
-  margin-top: 75px; /* 3 times larger margin-top */
-  font-size: 84px; /* 3 times larger font size */
-}
-
-/* Style for the floating button */
-#floating-button {
-  position: fixed;
-  bottom: 60px; /* 3 times larger bottom position */
-  right: 60px; /* 3 times larger right position */
-  z-index: 999;
-}
-
-#basket-count {
-  position: absolute;
-  top: 33px; /* 3 times larger top position */
-  right: -15px; /* 3 times larger right position */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 60px;
-  height: 60px;
-  background-color: rgb(202, 0, 0);
-  color: white;
-  font-size: 36px; /* 3 times larger font size */
-  border-radius: 50%;
-}
-
-#scroll-to-basket {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 180px; /* 3 times larger width */
-  height: 180px; /* 3 times larger height */
-  background-color: #9fc34d;
-  border: none;
-  border-radius: 50%;
-  cursor: pointer;
-}
-
-#scroll-to-basket:hover {
-  opacity: 0.8;
-}
-
-#basket-icon {
-  width: 120px; /* 3 times larger width */
-  height: 120px; /* 3 times larger height */
-  filter: invert(1);
-}
-
-.added-message {
-  margin-top: 150px; /* 3 times larger margin-top */
-  margin-bottom: -300px; /* 3 times larger margin-bottom */
-  display: none;
-  font-size: 75px; /* 3 times larger font size */
-}
 
 #bh-image {
   width: 50%; /* 3 times larger width */
@@ -329,7 +156,7 @@ input[type="number"] {
 }
 
 .show-terms {
-  color: rgb(146, 209, 230);
+  color: rgb(108, 167, 187);
   cursor: pointer;
 }
 
@@ -368,17 +195,18 @@ input[type="number"] {
   padding: 12px 80px;
   border-radius: 50px;
   background-color: #ff8383;
-  color: #743a3a;
+  color: white;
   
   display: block;
   margin: 0 auto;
   width: 50%;
   font-size: 24px;
+  font-weight: normal; /* or font-weight: 400; */
 }
 
 .toggle-container input[type="checkbox"]:checked + label {
-  background-color: #5ac15a;
-  color: #2d642d;
+  background-color: #9FC34D;
+  color: white;
 }
 
 
@@ -397,7 +225,7 @@ input[type="number"] {
   padding: 12px 80px;
   border-radius: 50px;
   background-color: #ff8383;
-  color: #834242;
+  color: white;
   
   display: block;
   margin: 0 auto;
@@ -405,8 +233,9 @@ input[type="number"] {
 }
 
 .menu-item-toggle-container input[type="checkbox"]:checked + label {
-  background-color: #5ac15a;
-  color: #2d642d;
+  background-color: #9FC34D;
+  color: white;
+  
 }
 
 
@@ -424,16 +253,17 @@ input[type="number"] {
   padding: 12px 80px;
   border-radius: 50px;
   background-color: #ff8383;
-  color: #834242;
+  color: white;
   font-size: 24px;
   display: block;
   margin: 0 auto;
   width: 50%;
+  font-weight: normal; /* or font-weight: 400; */
 }
 
 .toggle-container-capacity input[type="checkbox"]:checked + label {
-  background-color: #5ac15a;
-  color: #2d642d;
+  background-color: #9FC34D;
+  color: white;
 }
 
 .login-button {
@@ -442,7 +272,7 @@ input[type="number"] {
   padding: 12px 80px;
   font-size: 24px;
   background-color: #5a9fc1;
-  color: #2b4e5f;
+  color: white;
   cursor: pointer;
   transition: background-color 0.3s ease;
   display: block;
@@ -455,7 +285,7 @@ input[type="number"] {
   padding: 12px 80px;
   font-size: 24px;
   background-color: #5a9fc1;
-  color: #2b4e5f;
+  color: white;
   cursor: pointer;
   transition: background-color 0.3s ease;
   display: block;
@@ -465,14 +295,14 @@ input[type="number"] {
 
 .pill-button:hover {
   background-color: rgb(151, 212, 233);
-  color: #5a9fc1;
+  color: white;
 }
 
 
 
 .login-button:hover {
   background-color: rgb(151, 212, 233);
-  color: #5a9fc1;
+  color: white;
 }
 
 
@@ -510,7 +340,7 @@ hr {
   padding: 12px 80px;
   font-size: 24px;
   background-color: #5a9fc1;
-  color: #294655;
+  color: white;
   cursor: pointer;
   transition: background-color 0.3s ease;
   display: block;
@@ -520,7 +350,7 @@ hr {
 
 .delivery-login-button:hover {
   background-color: rgb(151, 212, 233);
-  color: #5a9fc1;
+  color: white;
 
 }
 
@@ -529,8 +359,8 @@ hr {
   border-radius: 50px;
   padding: 12px 80px;
   font-size: 24px;
-  background-color: #5ac15a;
-  color: #2d642d;
+  background-color: #9FC34D;
+  color: white;
   cursor: pointer;
   transition: background-color 0.3s ease;
   display: block;
@@ -554,19 +384,20 @@ hr {
 
 
 #logout-button.pill-button {
-  background-color: #834242;;
+  background-color: #834242;
+  color: white;
 }
 
 #logout-button.pill-button:hover {
-  background-color: #bbb1b1;
-  color: #834242;;
+  background-color: #b35858;
+  color: white;
 
 }
 
 
 .guest-login-button:hover {
   background-color: rgb(147, 233, 183);
-  color: #2d642d;
+  color: white;
 
 }
 

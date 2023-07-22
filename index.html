@@ -174,39 +174,7 @@
       </div>
     </div>
     
-    <div hidden id="order-form">
-      <h2 class="main-title">Order Details</h2>
-      <form id="order">
-        <label class="main-text" for="address-type">Delivery Address:</label><br>
-        <div id="address-options">
-          <input type="radio" id="yurt-option" name="address-type" value="yurt" checked>
-          <label class="main-text" for="yurt-option">Snooty Glamping</label>
-          <input type="radio" id="flag-option" name="address-type" value="flag">
-          <label class="main-text" for="flag-option">Playing Cards</label>
-        </div><br>
-      
-        <select id="delivery-address" name="delivery-address">
-          <!-- Delivery address options will be dynamically added here -->
-        </select>
-
-        <div hidden id="basket-section">
-          <h2 class="main-title">Your Basket</h2>
-          <p class="empty-basket-element">Empty</p>
-          <ul id="basket-list">
-            <!-- Basket items will be dynamically added here -->
-          </ul>
-    
-          <br><br>
-        </div>
-      
-    
-        <form action="/create-checkout-session" method="POST">        
-          <button id="checkout-button" type="submit">Place Order</button>
-        </form>
-
-        <br><br>
-      </form>
-    </div>
+  
 
    
 
@@ -215,12 +183,7 @@
 
 
   <!-- Add the floating button at the bottom right of the page -->
-  <div id="floating-button">
-    <button id="scroll-to-basket" title="View Basket">
-      <img src="./assets/basket-icon.png" alt="Basket" id="basket-icon">
-      <span id="basket-count">0</span>
-    </button>
-  </div>
+
 
 
 
