@@ -1,7 +1,21 @@
+import * as firebase from "firebase/app";
+import "firebase/database";
 
+const firebaseConfig = {
+  apiKey: "AIzaSyDweH-W6wCsTOvOsWIZf-Yl6mK_T1okQ4E",
+  authDomain: "festival-food-db.firebaseapp.com",
+  projectId: "festival-food-db",
+  storageBucket: "festival-food-db.appspot.com",
+  messagingSenderId: "174006042170",
+  appId: "1:174006042170:web:3fc5a7f3b4600175ab7f03",
+  measurementId: "G-Y1KG8W3CKP"
+};
 
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
 
-
+var accountID = ""; // WHEN LOGGED IN STORE ACCOUNTID 
 
 const publishable_key = "pk_live_51NVd2MEjWpAK8TuWU2ViGWscfzmVYt7KvTy2UoRWYR6KwJapFdGIwp3gzfZVnr8LPyqYhrOuoN3IVVof2J2NAqMW00GYLxjotP";
 
@@ -209,7 +223,62 @@ function hideFoodToggles() {
   });
 }
 
+function turnDeliveryOn()
+{
+  firebase.database().ref('deliveryStatus').set("ON");
+}
 
+function turnDeliveryOff()
+{
+
+  firebase.database().ref('deliveryStatus').set("OFF");
+
+
+}
+
+function turnDeliveryCapacity()
+{
+  firebase.database().ref('deliveryStatus').set("CAPACITY");
+}
+
+function updateDelivery()
+{
+  let deliveryStatus;
+
+  firebase.database().ref('deliveryStatus').on('value', (snapshot) => {
+  deliveryStatus = snapshot.val();
+});
+
+
+const statusElement = document.getElementById('status');
+const menu = document.getElementById("menu");
+const capacityToggleContainer = document.querySelector('.toggle-container-capacity');
+const capacity_toggle = document.getElementById('capacity-toggle');
+
+if(deliveryStatus === "ON")
+{
+  statusElement.innerHTML = 'active';
+  statusElement.style.color = 'green';
+  menu.style.display = "block";  
+  capacityToggleContainer.style.display = "block";
+}
+else if(deliveryStatus === "OFF")
+{
+  statusElement.innerHTML = 'offline';
+  statusElement.style.color = 'red';
+  menu.style.display = "none";
+    capacityToggleContainer.style.display = "none";
+    capacity_toggle.checked = false; // default to off
+}
+else if(deliveryStatus === "CAPACITY")
+{
+  statusElement.innerHTML = 'at capacity';
+  statusElement.style.color = 'orange';
+  menu.style.display = "none";    
+}
+
+
+}
 
 
 // Function to create a unique ID for each food item
@@ -312,6 +381,8 @@ loginButton.addEventListener("click", () => {
   guestButton.addEventListener("click", function () {
     loginContainer.style.display = "none";
 
+    accountType = "GUEST";
+
     // MOVE THIS TO THE LOGIN, THIS SHOULD NOT BE AVAILABLE FOR GUESTS
     settingsContainer.style.display = "block";  // ONLY IN GUEST FOR TESTING
     showFoodToggles();  // --------------       // ONLY IN GUEST FOR TESTING
@@ -324,48 +395,29 @@ loginButton.addEventListener("click", () => {
   });
 
   const logoutButton = document.getElementById("logout-button");
-  const statusElement = document.getElementById('status');
+  
   
   const toggle = document.getElementById('delivery-toggle');
 const menuItems = document.getElementById('menu');
-const capacityToggleContainer = document.querySelector('.toggle-container-capacity');
-const capacity_toggle = document.getElementById('capacity-toggle');
 
   logoutButton.addEventListener("click", function () {
     hideFoodToggles();
-    loginContainer.style.display = "block";
+    loginButton.style.display = "block";
     settingsContainer.style.display = "none";
+    capacityToggleContainer.style.display = "none";
 
- // Toggle is OFF
- statusElement.innerHTML = 'offline';
- statusElement.style.color = 'red';
- capacityToggleContainer.style.display = "none";
- capacity_toggle.checked = false; // default to off
- toggle.checked = false;
- menu.style.display = "none";
-
-    document.getElementById("notification").style.display = "block";
-    if (toggle.checked) {
-    menu.style.display = "block";
-    }
+    menu.style.display = "none";
+    
    
   });
 
 toggle.addEventListener('change', function() {
   if (toggle.checked) {
     // Toggle is ON
-    statusElement.innerHTML = 'active';
-    statusElement.style.color = 'green';
-    menu.style.display = "block";
-    capacityToggleContainer.style.display = "block";
+    turnDeliveryOn();    
 
   } else {
-    // Toggle is OFF
-    statusElement.innerHTML = 'offline';
-    statusElement.style.color = 'red';
-    menu.style.display = "none";
-    capacityToggleContainer.style.display = "none";
-    capacity_toggle.checked = false; // default to off
+       turnDeliveryOff();    
   }
 
 });
@@ -374,15 +426,10 @@ toggle.addEventListener('change', function() {
 capacity_toggle.addEventListener('change', function() {
   if (capacity_toggle.checked) {
     // Toggle is ON
-    statusElement.innerHTML = 'at capacity';
-    statusElement.style.color = 'orange';
-    menu.style.display = "none";    
-
-  } else {
-    // Toggle is OFF
-    statusElement.innerHTML = 'active';
-    statusElement.style.color = 'green';
-    menu.style.display = "block";
+    turnDeliveryCapacity();  
+  } 
+  else {
+    turnDeliveryOn();        
   }
 });
 
