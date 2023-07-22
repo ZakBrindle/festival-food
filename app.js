@@ -1,5 +1,4 @@
 
-import { db } from "./setupFirebase.js";
 
 var accountID = ""; // WHEN LOGGED IN STORE ACCOUNTID 
 

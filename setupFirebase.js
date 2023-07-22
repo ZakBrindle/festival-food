@@ -1,5 +1,3 @@
-// setupFirebase.js
-
 // Load the Firebase SDK URLs directly
 import { initializeApp } from "https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js";
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/8.6.1/firebase-analytics.js";
@@ -15,6 +13,7 @@ const firebaseConfig = {
   measurementId: "G-Y1KG8W3CKP"
 };
 
+// Function to set up Firebase
 function setupFirebase() {
   const app = initializeApp(firebaseConfig);
   const analytics = getAnalytics(app);
