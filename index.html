@@ -23,10 +23,10 @@
     <center><img hidden src="./assets/Festival-food-bg.png" alt="Festival Food" id="app-image-centered"></center>
     <div id="notification">
         <h2 class="main-title">Delivery Status</h2>
-        <p class="main-text" id="status-text">Delivery is currently <span id="status">Offline</span>. <br><br>Check back soon!</p>
+        <p class="main-text" id="status-text">Delivery is currently <span id="status">offline</span>. <br></p>
      
         <br>
-        
+        <p class="main-text">Only available at</p>
         <img src="./assets/bh.png" alt="Beatherder" id="bh-image">
       </div>
 
@@ -41,7 +41,12 @@
           <input type="checkbox" id="delivery-toggle">
           <label for="delivery-toggle">Toggle Delivery</label>
         </div>
+        <div style="display: none;" class="toggle-container-capacity">
+          <input type="checkbox" id="capacity-toggle">
+          <label for="capacity-toggle">Too Many Orders</label>
+        </div>
         <br>
+        <hr width="80%"><br>
         <button class="pill-button" id="order-history-btn" type="submit">Order History</button><br>
         <button class="pill-button" id="logout-button" type="submit">Logout</button>
 
@@ -51,16 +56,19 @@
       <div class="login-container">
        
         <form>
-         
+          <br>
+          <button id="guest-login-button" class="guest-login-button">Order as guest</button>  <br>
+          <p class="deliveryLoginMessage">Order food as a guest. Login to deliver.</p> <br>
+          <hr width="80%">
           <label for="username">Username</label>
           <input type="text" id="username" name="username" required>
           <label for="password">Password</label>
           <input type="password" id="password" name="password" required><br> 
-          <p class="deliveryLoginMessage">Login for delivery. Order food as a guest. </p> <br>
+       
           <button class="delivery-login-button" type="submit">Delivery login</button>
-          <br>
+      
         </form>
-        <button id="guest-login-button" class="guest-login-button">Order as guest</button>  <br><br>
+    
       <br><br>
 
       </div>

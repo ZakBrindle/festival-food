@@ -561,6 +561,7 @@ loginButton.addEventListener("click", () => {
   // Hide the login button
   loginButton.style.display = "none";
 
+  document.getElementById("notification").style.display = "none";
 
 
   // Make the login container visible
@@ -578,8 +579,11 @@ loginButton.addEventListener("click", () => {
   guestButton.addEventListener("click", function () {
     loginContainer.style.display = "none";
     settingsContainer.style.display = "block";
+    
+    document.getElementById("notification").style.display = "block";
     if (toggle.checked) {
     menu.style.display = "block";
+
     }
   });
 
@@ -589,6 +593,7 @@ loginButton.addEventListener("click", () => {
   logoutButton.addEventListener("click", function () {
     loginContainer.style.display = "block";
     settingsContainer.style.display = "none";
+    document.getElementById("notification").style.display = "block";
     if (toggle.checked) {
     menu.style.display = "block";
     }
@@ -600,22 +605,42 @@ loginButton.addEventListener("click", () => {
   const toggle = document.getElementById('delivery-toggle');
 const statusElement = document.getElementById('status');
 const menuItems = document.getElementById('menu');
+const capacityToggleContainer = document.querySelector('.toggle-container-capacity');
+const capacity_toggle = document.getElementById('capacity-toggle');
 
 
 toggle.addEventListener('change', function() {
   if (toggle.checked) {
     // Toggle is ON
-    statusElement.innerHTML = 'Active';
+    statusElement.innerHTML = 'active';
     statusElement.style.color = 'green';
     menu.style.display = "block";
+    capacityToggleContainer.style.display = "block";
+
   } else {
     // Toggle is OFF
-    statusElement.innerHTML = 'Disabled';
+    statusElement.innerHTML = 'offline';
     statusElement.style.color = 'red';
     menu.style.display = "none";
+    capacityToggleContainer.style.display = "none";
+    capacity_toggle.checked = false; // default to off
+  }
+
+});
 
 
+capacity_toggle.addEventListener('change', function() {
+  if (capacity_toggle.checked) {
+    // Toggle is ON
+    statusElement.innerHTML = 'at capacity';
+    statusElement.style.color = 'orange';
+    menu.style.display = "none";    
 
+  } else {
+    // Toggle is OFF
+    statusElement.innerHTML = 'active';
+    statusElement.style.color = 'green';
+    menu.style.display = "block";
   }
 });
 

@@ -184,6 +184,7 @@ input[type="number"] {
   text-align: center;
   font-size: 48px; /* 3 times larger font size */
   color: #333;
+  margin-bottom: -30px;
 }
 
 .empty-basket-element {   
@@ -309,6 +310,7 @@ input[type="number"] {
 
 #bh-image {
   width: 50%; /* 3 times larger width */
+  margin-top: -30px;
 }
 
 
@@ -327,7 +329,7 @@ input[type="number"] {
 }
 
 .show-terms {
-  color: lightblue;
+  color: rgb(146, 209, 230);
   cursor: pointer;
 }
 
@@ -374,7 +376,34 @@ input[type="number"] {
 }
 
 .toggle-container input[type="checkbox"]:checked + label {
-  background-color: rgb(173, 230, 190);
+  background-color: rgb(138, 226, 164);
+  color: white;
+}
+
+
+.toggle-container-capacity {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.toggle-container-capacity input[type="checkbox"] {
+  display: none;
+}
+
+.toggle-container-capacity label {
+  cursor: pointer;
+  padding: 12px 80px;
+  border-radius: 50px;
+  background-color: #ff8383;
+  color: white;
+  
+  display: block;
+  margin: 0 auto;
+  width: 50%;
+}
+
+.toggle-container-capacity input[type="checkbox"]:checked + label {
+  background-color: rgb(138, 226, 164);
   color: white;
 }
 
@@ -383,7 +412,7 @@ input[type="number"] {
   border-radius: 50px;
   padding: 12px 80px;
   font-size: 16px;
-  background-color: lightblue;
+  background-color: rgb(151, 212, 233);
   color: white;
   cursor: pointer;
   transition: background-color 0.3s ease;
@@ -396,7 +425,7 @@ input[type="number"] {
   border-radius: 50px;
   padding: 12px 80px;
   font-size: 16px;
-  background-color: lightblue;
+  background-color: rgb(151, 212, 233);
   color: white;
   cursor: pointer;
   transition: background-color 0.3s ease;
@@ -436,7 +465,9 @@ input[type="password"] {
 }
 
 
-
+hr {
+  border: 1px solid rgb(238, 238, 238);
+}
 
 
 
@@ -445,7 +476,7 @@ input[type="password"] {
   border-radius: 50px;
   padding: 12px 80px;
   font-size: 16px;
-  background-color: lightblue;
+  background-color: rgb(151, 212, 233);
   color: white;
   cursor: pointer;
   transition: background-color 0.3s ease;
@@ -463,7 +494,7 @@ input[type="password"] {
   border-radius: 50px;
   padding: 12px 80px;
   font-size: 16px;
-  background-color: rgb(173, 230, 197);
+  background-color: rgb(147, 233, 183);
   color: white;
   cursor: pointer;
   transition: background-color 0.3s ease;
