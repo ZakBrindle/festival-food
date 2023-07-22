@@ -1,5 +1,9 @@
+let db;
 
-
+// This function should be called from your main script after Firebase has been initialized.
+export function setupFirebase(app) {
+  db = getDatabase(app);
+}
 
 var accountID = ""; // WHEN LOGGED IN STORE ACCOUNTID 
 
@@ -208,6 +212,9 @@ function hideFoodToggles() {
     toggle.style.display = "none";
   });
 }
+
+
+
 
 function turnDeliveryOn()
 {
