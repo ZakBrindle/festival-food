@@ -232,7 +232,7 @@ function turnDeliveryCapacity()
   updateDelivery();
 
 }
-
+/*
 import { setupFirebase } from "./js/setupFirebase.js";
 
 // Get the app and db objects from setupFirebase
@@ -248,7 +248,7 @@ const { app, db } = setupFirebase();
       deliveryStatus = snapshot.val();
       console.log("Firebase: Delivery status - " + deliveryStatus);
     });
-  
+  */
   
 
   
