@@ -1,5 +1,9 @@
-import { initializeApp } from "firebase/app";
-import { getDatabase } from "firebase/database";
+// setupFirebase.js
+
+// Load the Firebase SDK URLs directly
+import { initializeApp } from "https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js";
+import { getAnalytics } from "https://www.gstatic.com/firebasejs/8.6.1/firebase-analytics.js";
+import { getDatabase } from "https://www.gstatic.com/firebasejs/8.6.1/firebase-database.js";
 
 const firebaseConfig = {
   apiKey: "AIzaSyDweH-W6wCsTOvOsWIZf-Yl6mK_T1okQ4E",
@@ -11,7 +15,14 @@ const firebaseConfig = {
   measurementId: "G-Y1KG8W3CKP"
 };
 
-const app = initializeApp(firebaseConfig);
-const db = getDatabase(app);
+function setupFirebase() {
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+  const db = getDatabase(app);
 
-export { app, db };
+  // Export the Firebase app and database for use in other modules
+  return { app, db };
+}
+
+// Call the setupFirebase function to initialize Firebase and export app and db
+setupFirebase();

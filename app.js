@@ -233,11 +233,15 @@ function turnDeliveryCapacity()
   updateDelivery();
 
 }
-import { initializeApp } from "firebase/app";
-import { getDatabase } from "firebase/database";
+
+// Import the setupFirebase function from setupFirebase.js
+import { setupFirebase } from "./setupFirebase.js";
+
+// Get the app and db objects from setupFirebase
+const { app, db } = setupFirebase();
 
   updateDelivery();
-function updateDelivery() {
+  function updateDelivery() {
     let deliveryStatus;
   
     db.ref('deliveryStatus').on('value', (snapshot) => {
