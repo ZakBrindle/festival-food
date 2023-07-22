@@ -195,7 +195,7 @@ input[type="number"] {
   padding: 12px 80px;
   border-radius: 50px;
   background-color: #ff8383;
-  color: white;
+  color: black;
   
   display: block;
   margin: 0 auto;
@@ -206,7 +206,7 @@ input[type="number"] {
 
 .toggle-container input[type="checkbox"]:checked + label {
   background-color: #9FC34D;
-  color: white;
+  color: #0b1106bb;
 }
 
 
@@ -225,16 +225,17 @@ input[type="number"] {
   padding: 12px 80px;
   border-radius: 50px;
   background-color: #ff8383;
-  color: white;
+  color: #200404;
   
   display: block;
   margin: 0 auto;
-  width: 43%;
+  width: 50%;
+  margin-left: -15px;
 }
 
 .menu-item-toggle-container input[type="checkbox"]:checked + label {
   background-color: #9FC34D;
-  color: white;
+  color: #0b1106;
   
 }
 
@@ -253,7 +254,7 @@ input[type="number"] {
   padding: 12px 80px;
   border-radius: 50px;
   background-color: #ff8383;
-  color: white;
+  color: #200404;
   font-size: 24px;
   display: block;
   margin: 0 auto;
@@ -263,7 +264,7 @@ input[type="number"] {
 
 .toggle-container-capacity input[type="checkbox"]:checked + label {
   background-color: #9FC34D;
-  color: white;
+  color: #0b1106bb;
 }
 
 .login-button {
@@ -360,7 +361,7 @@ hr {
   padding: 12px 80px;
   font-size: 24px;
   background-color: #9FC34D;
-  color: white;
+  color: #0b1106bb;
   cursor: pointer;
   transition: background-color 0.3s ease;
   display: block;
@@ -374,7 +375,7 @@ hr {
   padding: 12px 80px;
   font-size: 24px;
   background-color: #834242;;
-  color: #bbb1b1;;
+  color: white;
   cursor: pointer;
   display: block;
   margin: 0 auto;
@@ -384,12 +385,12 @@ hr {
 
 
 #logout-button.pill-button {
-  background-color: #834242;
+  background-color: #a74040;
   color: white;
 }
 
 #logout-button.pill-button:hover {
-  background-color: #b35858;
+  background-color: #a76f6f;
   color: white;
 
 }
@@ -397,7 +398,7 @@ hr {
 
 .guest-login-button:hover {
   background-color: rgb(147, 233, 183);
-  color: white;
+  color: #0b1106bb;
 
 }
 

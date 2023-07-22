@@ -324,27 +324,32 @@ loginButton.addEventListener("click", () => {
   });
 
   const logoutButton = document.getElementById("logout-button");
-
+  const statusElement = document.getElementById('status');
+  
+  const toggle = document.getElementById('delivery-toggle');
+const menuItems = document.getElementById('menu');
+const capacityToggleContainer = document.querySelector('.toggle-container-capacity');
+const capacity_toggle = document.getElementById('capacity-toggle');
 
   logoutButton.addEventListener("click", function () {
     hideFoodToggles();
     loginContainer.style.display = "block";
     settingsContainer.style.display = "none";
+
+ // Toggle is OFF
+ statusElement.innerHTML = 'offline';
+ statusElement.style.color = 'red';
+ capacityToggleContainer.style.display = "none";
+ capacity_toggle.checked = false; // default to off
+ toggle.checked = false;
+ menu.style.display = "none";
+
     document.getElementById("notification").style.display = "block";
     if (toggle.checked) {
     menu.style.display = "block";
     }
    
   });
-
-
-
-  const toggle = document.getElementById('delivery-toggle');
-const statusElement = document.getElementById('status');
-const menuItems = document.getElementById('menu');
-const capacityToggleContainer = document.querySelector('.toggle-container-capacity');
-const capacity_toggle = document.getElementById('capacity-toggle');
-
 
 toggle.addEventListener('change', function() {
   if (toggle.checked) {
