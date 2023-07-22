@@ -219,11 +219,8 @@ function turnDeliveryOn()
 
 function turnDeliveryOff()
 {
-
   firebase.database().ref('deliveryStatus').set("OFF");
   updateDelivery();
-
-
 }
 
 function turnDeliveryCapacity()
@@ -231,6 +228,20 @@ function turnDeliveryCapacity()
   firebase.database().ref('deliveryStatus').set("CAPACITY");
   updateDelivery();
 
+}
+
+
+function forceON()
+{
+  const statusElement = document.getElementById('status');
+const menu = document.getElementById("menu");
+const capacityToggleContainer = document.querySelector('.toggle-container-capacity');
+const capacity_toggle = document.getElementById('capacity-toggle');
+
+  statusElement.innerHTML = 'active';
+  statusElement.style.color = 'green';
+  menu.style.display = "block";  
+  capacityToggleContainer.style.display = "block";
 }
 
 //import { setupFirebase } from "./js/setupFirebase.js";
@@ -249,10 +260,6 @@ function turnDeliveryCapacity()
     //  console.log("Firebase: Delivery status - " + deliveryStatus);
     //});
   
-  
-
-  
-
 const statusElement = document.getElementById('status');
 const menu = document.getElementById("menu");
 const capacityToggleContainer = document.querySelector('.toggle-container-capacity');
@@ -419,12 +426,24 @@ const capacity_toggle = document.getElementById('capacity-toggle');
 toggle.addEventListener('change', function() {
   if (toggle.checked) {
     // Toggle is ON
-    menu.style.display = "block";
-    turnDeliveryOn();    
+    
+    const statusElement = document.getElementById('status');
+    const menu = document.getElementById("menu");
+    const capacityToggleContainer = document.querySelector('.toggle-container-capacity');
 
+    statusElement.innerHTML = 'active';
+    statusElement.style.color = 'green';
+    menu.style.display = "block";  
+   // capacityToggleContainer.style.display = "block";
+        
+    
+    console.log("Turn delivery on");
 
-  } else {
+  }
+  else {
        turnDeliveryOff();    
+    console.log("Turn delivery off");
+
   }
 
 });
