@@ -1,4 +1,7 @@
+import { setupFirebase } from "./js/setupFirebase.js";
 
+//Get the app and db objects from setupFirebase
+const { app, db } = setupFirebase();
 
 var accountID = ""; // WHEN LOGGED IN STORE ACCOUNTID 
 
@@ -222,10 +225,11 @@ const capacity_toggle = document.getElementById('capacity-toggle');
   capacityToggleContainer.style.display = "block";
 }
 
-//import { setupFirebase } from "./js/setupFirebase.js";
 
-// Get the app and db objects from setupFirebase
-//const { app, db } = setupFirebase();
+
+
+
+
 
   updateDelivery();
   function updateDelivery() {
