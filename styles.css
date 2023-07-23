@@ -121,7 +121,7 @@ input[type="number"] {
 
 .food-image {
   max-width: 300px;
-  margin-right: 25px;
+  margin-right: 60px;
   height: auto;
   border-radius: 30px;
   align-self: center; /* Center the image vertically */
@@ -131,7 +131,7 @@ input[type="number"] {
   font-size: 54px;
   color: darkgreen;
   
-  margin-top: 40px;
+  margin-top: 5px;
 }
 
 .main-title {   
