@@ -76,6 +76,8 @@ input[type="number"] {
   font-weight: bold;
   color: #c0392b;
 }
+
+
 .food-item-wrapper {
   margin: 75px;
   border-radius: 30px;
@@ -95,21 +97,31 @@ input[type="number"] {
   margin-bottom: 30px;
 }
 
-
-.food-name-wrapper {
-  margin-top: 50px;
-  
+.food-info-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;  
+  justify-content: center; 
 }
+
+.food-detail {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;  
+  text-align: left;  
+}
+
 
 .food-name {
   font-weight: bold;
   font-family: "Century Gothic", Arial, sans-serif;
   font-size: 48px;
-  margin-left: 55px;
+ 
 }
 
 .food-image {
   max-width: 300px;
+  margin-right: 25px;
   height: auto;
   border-radius: 30px;
   align-self: center; /* Center the image vertically */

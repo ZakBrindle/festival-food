@@ -103,23 +103,26 @@ function createFoodItem(food, index) {
   const foodItem = document.createElement("div");
   foodItem.classList.add("food-item");
 
+  const foodInfoWrapper = document.createElement("div");
+  foodInfoWrapper.classList.add("food-info-wrapper");
+
+  const foodDetail = document.createElement("div"); // New div for food-name and price
+  foodDetail.classList.add("food-detail");
+
   const foodName = document.createElement("span");
   foodName.textContent = food.name;
   foodName.classList.add("food-name");
-
-  const foodNameWrapper = document.createElement("div");
-  foodNameWrapper.classList.add("food-name-wrapper");
-  foodNameWrapper.appendChild(foodName);
 
   const price = document.createElement("span");
   price.textContent = `£${food.price.toFixed(2)}`;
   price.classList.add("price");
 
-  const foodInfoWrapper = document.createElement("div");
-  foodInfoWrapper.classList.add("food-info-wrapper");
+  // Append foodName and price to foodDetail
+  foodDetail.appendChild(foodName);
+  foodDetail.appendChild(price);
 
-  foodInfoWrapper.appendChild(foodNameWrapper);
-  foodInfoWrapper.appendChild(price);
+  // Append foodDetail to foodInfoWrapper
+  foodInfoWrapper.appendChild(foodDetail);
 
   const spaceDiv = document.createElement("div");
   spaceDiv.style.height = "20px";
@@ -135,12 +138,10 @@ function createFoodItem(food, index) {
   foodInfoWrapper.appendChild(spaceDiv2);
 
   foodItem.appendChild(foodInfoWrapper);
-
   
   foodItemWrapper.appendChild(foodImage);
   foodItemWrapper.appendChild(foodItem);
   
-
 
   const menuItemToggleContainer = document.createElement("div");
   menuItemToggleContainer.classList.add("menu-item-toggle-container");
@@ -160,11 +161,8 @@ function createFoodItem(food, index) {
 
   foodItem.appendChild(menuItemToggleContainer);  // Append menuItemToggleContainer to foodItem
 
-
-
   return foodItemWrapper;
 }
-
 
 
 
