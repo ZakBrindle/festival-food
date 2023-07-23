@@ -83,26 +83,29 @@ input[type="number"] {
   padding: 30px;
   position: relative;
   display: flex; /* Add display flex */
-  align-items: flex-start; /* Align items to the top */
+  align-items: center; /* Align items to the center vertically */
+  justify-content: center; /* Align items to the center horizontally */
 }
 
 .food-item {
   display: flex;
   flex-direction: column;
-  align-items: flex-start; /* Align items to the start */
+  align-items: center; /* Align items to the center vertically */
+  text-align: center; /* Align text to the center horizontally */
   margin-bottom: 30px;
-  margin-left: 20px; /* Add some space between the image and the content on the right */
-  text-align: left; /* Align text to the left */
 }
+
 
 .food-name-wrapper {
   margin-top: 50px;
+  
 }
 
 .food-name {
   font-weight: bold;
   font-family: "Century Gothic", Arial, sans-serif;
   font-size: 48px;
+  margin-left: 55px;
 }
 
 .food-image {
@@ -115,6 +118,8 @@ input[type="number"] {
 .price {
   font-size: 54px;
   color: darkgreen;
+  
+  margin-top: 40px;
 }
 
 .main-title {   

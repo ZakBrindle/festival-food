@@ -141,7 +141,7 @@ function createFoodItem(food, index) {
   foodItemWrapper.appendChild(foodItem);
   
 
-  
+
   const menuItemToggleContainer = document.createElement("div");
   menuItemToggleContainer.classList.add("menu-item-toggle-container");
   menuItemToggleContainer.style.display = "none";
