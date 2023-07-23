@@ -1,4 +1,3 @@
-import { setupFirebase } from "./js/setupFirebase.js";
 
 //Get the app and db objects from setupFirebase
 const { app, db } = setupFirebase();

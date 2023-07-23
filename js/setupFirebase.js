@@ -1,4 +1,4 @@
-// setupFirebase.js
+import { initializeApp } from 'firebase/app';
 
 // Firebase configuration
 const firebaseConfig = {
@@ -11,14 +11,10 @@ const firebaseConfig = {
   measurementId: "G-Y1KG8W3CKP"
 };
 
-// Function to set up Firebase
-function setupFirebase() {
-  const app = firebase.initializeApp(firebaseConfig);
-  const db = firebase.database();
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
 
-  // Return the Firebase app and database for use in app.js
-  return { app, db };
+async function getData(app)
+{
+ return;
 }
-
-// Call the setupFirebase function and store the returned app and db objects in window
-window.firebaseApp = setupFirebase();
